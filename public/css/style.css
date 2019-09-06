@@ -1,0 +1,124 @@
+.support-center {
+  background : #034;
+  position:  absolute;
+  z-index : 1;
+  top : 300px;
+  transform: rotate(-0.25turn);
+  right :-66px;
+  display: none;
+}
+
+.form-button {
+  background : rgba(0,42,68,1) !important;
+}
+
+.menu-connex {
+  /*border:solid 1px black;*/
+  position : absolute;
+  right : 0;
+  top : 0;
+  width : 50%;
+  margin-top: 0.7%;
+}
+
+.menu-connex > ul > li{
+  display: inline;
+  border-left : solid 1px black;
+  padding: 1%;
+}
+
+.menu-connex > ul > li > a {
+  padding :0.5%;
+}
+
+.menu-connex > ul > li > a.link-text {
+  font-family: Consolas ;
+  word-spacing: -3px;
+  letter-spacing: 0px;
+  font-size : 0.77rem;
+  text-decoration: none;
+}
+
+
+.denom {
+  border-left:solid 1px black;
+  width:230px;
+  font-size: 0.88rem;
+  margin :1%;
+  padding:2%;
+  font-family: Arial;
+  line-height: 1;
+  vertical-align: middle;
+
+}
+
+.sigle {
+  font-family: "Times new Roman", Arial;
+  font-size : 2.5rem;
+  color : #404040;
+  width: 120px;
+  margin:0px;
+  line-height: normal;
+}
+
+.sigle-mini{
+  font-size: 1rem;
+  letter-spacing: 11px;
+}
+.logo {
+  width :80px;
+}
+/* responsive styles */
+.responsive-denom {
+  border-left:solid 1px grey;
+  width:200px;
+  font-size: 0.81rem;
+  margin :1%;
+  margin-left :5%;
+  padding:2%;
+  font-family: Arial;
+  line-height:1.5;
+  vertical-align: middle;
+}
+.responsive-sigle-mini {
+  font-size: 0.5rem;
+  letter-spacing: 5px;
+}
+.responsive-sigle {
+  font-family: "Times new Roman", Arial;
+  font-size : 1.2rem;
+  color : #404040;
+  width: 50px;
+  margin:0px;
+  line-height: normal;
+}
+
+ .responsive-logo {
+   width : 40px;
+ }
+
+
+
+.menu-text > a {
+  /*font-family: "consolas" !important;*/
+}
+
+.panel-right {
+  /*border :solid 1px black;*/
+}
+
+.panel-right > ul {
+  padding : 5%;
+}
+
+.panel-right-header {
+  background : rgba(0,42,68,1);
+  color : #fff;
+
+}
+
+.copy {
+  border:solid 1px black;
+  background: #fff;
+  color: #000;
+}
