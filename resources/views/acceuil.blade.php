@@ -6,24 +6,59 @@ ACCEUIL
 @endsection
 @section('content')
 <!-- BANNIERE -->
-<div class="uk-visible@l" uk-slideshow="autoplay:true;autoplay-interval : 5000; max-height: 400">
-    <ul class="uk-slideshow-items" >
-    	@if($banniere)
-    	@foreach($banniere as $key => $value)
-        <li>
-            <img src="{{asset('article/'.$value->image)}}" alt="" uk-cover>
-            <div class="uk-overlay uk-overlay-default uk-position-bottom-right uk-position-small uk-transition-slide-bottom">
-                <h3 class="uk-margin-remove uk-width-xlarge">{{$value->titre}}</h3>
-                <!-- <p class="uk-margin-remove">Lorem ipsum dolor sit amet.</p> -->
-            </div>
-        </li>
-        @endforeach
-        @endif
-    </ul>
-    <div class="uk-light">
-        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+<div class="uk-child-width-1-2@m" uk-grid>
+<div class="uk-background-muted" style="padding-top : 3rem;">
+  <!-- first column -->
+  <div class="uk-heading uk-text-center uk-h3">
+    <hr class="uk-divider-small uk-margin-small">
+  </div>
+  <div class="uk-padding uk-child-width-1-3@m" uk-grid>
+    <!--  -->
+    <div class="">
+      <!-- administration -->
+        <img src="{{asset('svg-icons/city-hall.svg')}}"  uk-svg>
+      <div class="uk-text-lead uk-text-center">
+        Administration
+      </div>
     </div>
+    <div class="">
+      <!-- entreprise -->
+      <img src="{{asset('svg-icons/skycraper.svg')}}" uk-svg>
+      <div class="uk-text-lead uk-text-center">
+        Entreprise
+      </div>
+    </div>
+    <div class="">
+    <!-- particulier -->
+    <img src="{{asset('svg-icons/house.svg')}}" uk-svg>
+    <div class="uk-text-lead uk-text-center">
+      Particulier
+    </div>
+    </div>
+  </div>
+</div>
+<div class="uk-padding-remove">
+  <!-- banniere -->
+  <div class="uk-visible@l" uk-slideshow="autoplay:true;autoplay-interval : 5000; max-height: 400">
+      <ul class="uk-slideshow-items" >
+      	@if($banniere)
+      	@foreach($banniere as $key => $value)
+          <li>
+              <img src="{{asset('article/'.$value->image)}}" alt="" uk-cover>
+              <div class="uk-overlay uk-overlay-default uk-position-bottom-right uk-position-small uk-transition-slide-bottom">
+                  <h3 class="uk-margin-remove uk-width-xlarge">{{$value->titre}}</h3>
+                  <!-- <p class="uk-margin-remove">Lorem ipsum dolor sit amet.</p> -->
+              </div>
+          </li>
+          @endforeach
+          @endif
+      </ul>
+      <div class="uk-light">
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+      </div>
+  </div>
+</div>
 </div>
 <!-- // -->
 <!-- responsive sliders -->
