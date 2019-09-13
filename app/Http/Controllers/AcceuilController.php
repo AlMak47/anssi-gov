@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use App\Pages;
+use App\Partners;
 class AcceuilController extends Controller
 {
     //
@@ -26,5 +27,11 @@ class AcceuilController extends Controller
 					foreach ($voir as $key => $value) {
 						echo "<li><a class='uk-button uk-button-text' href=\"".url('/voir-aussi/'.$value->slug)."\"><span uk-icon='icon:check;ratio:.8'></span> ".$value->titre."</a></li>";
 					}
+    }
+
+    public function partenariatsIndex() {
+      $partnersS = Partners::where('tag','strategique')->get();
+      $partnerT = Partners::where('tag','technique')->get();
+      return view('partenariats')->withPartners($partnersS)->withPartnert($partnerT);
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-CONTACT-US
+Contactez Nous
 @endsection
 
 @section('content')
@@ -13,60 +13,16 @@ CONTACT-US
 		</ul>
 		<div uk-grid>
 			<div class="uk-width-1-5@m uk-visible@l">
-				<div class='uk-border-rounded panel-right uk-box-shadow-small'>
-					<div class='uk-card-title uk-heading-divider uk-text-center panel-right-header uk-border-rounded uk-padding-small'>DOCUMENTATION</div>
-					<ul uk-accordion="multiple : true">
-						<li>
-								<a class="uk-accordion-title" href="#">Lois</a>
-								@php
-								use Illuminate\Support\Facades\Storage;
-								$lois = App\Document::getLois();
-								@endphp
-								<div class="uk-accordion-content">
-										<ul class="uk-list">
-											@foreach($lois as $key=>$value)
-											<li><a href="{{asset(config('document.path').'/'.$value->file)}}" target="_blank" class="uk-button uk-button-text" href="" uk-tooltip="{{$value->titre}}"><span uk-icon='icon:check;ratio:.8'></span> {{str_limit($value->titre,27,'...')}}</a></li>
-											@endforeach
-										</ul>
-								</div>
-						</li>
-						<li>
-								<a class="uk-accordion-title" href="#">Decrets</a>
-								@php
-								$docs = App\Document::getDecrets();
-								@endphp
-								<div class="uk-accordion-content">
-										<ul class="uk-list">
-											@foreach($docs as $key=>$value)
-											<li><a href="{{asset(config('document.path').'/'.$value->file)}}" target="_blank" class="uk-button uk-button-text" uk-tooltip="{{$value->titre}}"><span uk-icon='icon:check;ratio:.8'></span> {{str_limit($value->titre,20,'...')}}</a></li>
-											@endforeach
-										</ul>
-								</div>
-						</li>
-						<li>
-								<a class="uk-accordion-title" href="#">Arrete</a>
-								@php
-								$docs = App\Document::getArrete();
-								@endphp
-								<div class="uk-accordion-content">
-										<ul class="uk-list">
-											@foreach($docs as $key=>$value)
-											<li><a href="{{asset(config('document.path').'/'.$value->file)}}" target="_blank" class="uk-button uk-button-text" uk-tooltip="{{$value->titre}}"><span uk-icon='icon:check;ratio:.8'></span> {{str_limit($value->titre,20,'...')}}</a></li>
-											@endforeach
-										</ul>
-								</div>
-						</li>
-					</ul>
-				</div>
-				<div class='uk-border-rounded panel-right uk-box-shadow-small'>
-					<div class='uk-card-title uk-heading-divider uk-text-center panel-right-header uk-border-rounded uk-padding-small'>AUTRES LIENS</div>
-					<ul class='uk-list'>
-						<li><a class='uk-button uk-button-text' href="https://www.arpt.gov.gn" target="_blank" uk-tooltip="Autorite de Regulation des Postes et Telecommunication"><span uk-icon='icon:check;ratio:.8'></span> ARPT</a></li>
-
-						<li><a class='uk-button uk-button-text' href="https://www.mpten.gov.gn/" target="_blank" uk-tooltip="Ministere des Postes et Telecommunication et de l'Economie Numerique"><span uk-icon='icon:check;ratio:.8'></span> MPTEN</a></li>
-
-
-					</ul>
+				<div class="" id="left-menu">
+					<div class=''>
+						<!-- <div class=' uk-text-center panel-right-header uk-border-rounded uk-padding-remove'>Autres liens</div> -->
+						<ul class="uk-list uk-list-divider">
+							<li><a href="https://support.anssi.gov.gn" class="uk-button-link" target="_blank">Support Center</a> </li>
+							<li class="uk-text-left">Kipe Plaza Diamond Plateau Administratif, Republique de Guinee</li>
+							<li class="uk-text-left">info@anssi.gov.gn</li>
+							<li class="uk-text-left">BP : 5000</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<div class="uk-width-3-5@m">
@@ -96,26 +52,41 @@ CONTACT-US
 				</div>
 				{!!Form::submit('Envoyer',['class'=>'uk-button form-button uk-light'])!!}
 				{!!Form::close()!!}
-			</div>
-			<div class="uk-width-1-5@m uk-visible@l">
-				<div class='uk-border-rounded panel-right uk-box-shadow-small'>
-					<div class='uk-card-title uk-heading-divider uk-text-center panel-right-header uk-border-rounded uk-padding-small'>A VOIR AUSSI</div>
-					<ul class='uk-list'>
-						<?php App\Http\Controllers\AcceuilController::voirAussi(); ?>
-					</ul>
+				<!-- maps -->
+				<div class="uk-margin-top">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.6891269654734!2d-13.653117602503857!3d9.60672626929317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf1cd6131ddc6abd%3A0x520c269711cb5523!2sPlaza%20Diamant!5e1!3m2!1sfr!2s!4v1568342936414!5m2!1sfr!2s" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 				</div>
-				<div class='uk-border-rounded panel-right uk-box-shadow-small'>
-					<div class='uk-card-title uk-heading-divider uk-text-center panel-right-header uk-border-rounded uk-padding-small'>LIENS</div>
-					<ul class='uk-list'>
-						<li><a class='uk-button uk-button-text uk-text-left' href="https://cve.mitre.org/" target="_blank"><span uk-icon='icon:check;ratio:.8'></span> Common Vulnerability and Exposures</a></li>
-
-						<li><a class='uk-button uk-button-text uk-text-left' href="https://www.exploit-db.com/" target="_blank"><span uk-icon='icon:check;ratio:.8'></span> Exploit Database</a></li>
-
-						<li><a class='uk-button uk-button-text uk-text-left' href="https://nvd.nist.gov/vuln/detail/CVE" target="_blank"><span uk-icon='icon:check;ratio:.8'></span> NIST</a></li>
-
-						<li><a class='uk-button uk-button-text uk-text-left' href="https://www.cvedetails.com/" target="_blank"><span uk-icon='icon:check;ratio:.8'></span> CVE Details</a></li>
-
-					</ul>
+			</div>
+			<div class="uk-width-1-5@m">
+				<div class="" id="right-menu">
+					<div class='uk-border-rounded panel-right uk-box-shadow-small'>
+						<div class='uk-card-title uk-heading-divider uk-text-center panel-right-header uk-border-rounded uk-padding-remove'><a class="uk-button uk-text-bold" style="text-decoration :none;color:#fff" href="{{url('/voir-aussi',[App\Pages::where('slug','en-cas-dincidence')->first()->slug])}}">En cas d'incident</a></div>
+						<ul class="uk-list uk-list-divider">
+							<li class="uk-text-center uk-text-bold">
+								<span uk-icon="icon:receiver;ratio:2" class="phone-icone"></span> <span class="phone-number" style="text-decoration: none;">627 537 012</span>
+							</li>
+							<li class="uk-text-center">
+								<a href="https://support.anssi.gov.gn" class="uk-button-link">Cellule d'alerte</a>
+							</li>
+							<li class="uk-text-center">
+								<a href="#" class="uk-button-link">Recrutement</a>
+							</li>
+						</ul>
+					</div>
+					<div class='uk-border-rounded uk-margin-top panel-right uk-box-shadow-small'>
+						<div class='uk-text-bold uk-text-center panel-right-header uk-border-rounded uk-padding-remove'>Nous Contacter</div>
+						<div class="uk-grid-small uk-padding  uk-child-width-1-3@m" uk-grid>
+							<div class="">
+								<a href="https://www.facebook.com/anssi.guinee.3" target="_blank" class="uk-padding-small uk-border-rounded uk-button-primary"><span uk-icon="icon:facebook ;"></span></a>
+							</div>
+							<div class="">
+								<a href="https://www.twitter.com/AnssiGuinee" target="_blank" class="uk-padding-small uk-border-rounded uk-button-primary" style="background:skyblue"><span uk-icon="icon:twitter ;"></span></a>
+							</div>
+							<div class="">
+								<a href="" class="uk-padding-small uk-border-rounded uk-button-primary" style="background:red"><span uk-icon="icon:youtube ;"></span></a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

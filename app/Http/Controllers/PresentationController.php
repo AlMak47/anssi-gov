@@ -21,4 +21,22 @@ class PresentationController extends Controller
     	$details = Pages::where('slug',$slug)->first();
     	return view('detail-voir-aussi')->withDetails($details);
     }
+
+    public function detailsAdministration($tag,$slug)  {
+      $details = Pages::where('slug',$slug)->first();
+    	return view('detail-administration')->withDetails($details)->withTag($tag);
+    }
+
+    public function cadreLegalIndex($slug) {
+      $cadre = Pages::where('slug',$slug)->first();
+      $tab = [
+        'lois'  =>  ['loi'],
+        'decrets-et-arretes'  =>  ['decret','arrete'],
+        'decision'  =>  ['decision'],
+        'documents-strategiques' =>  ['document_strategique']
+      ];
+      return view('cadre-legal')->withCadre($cadre)->withTab($tab);
+    }
+
+
 }

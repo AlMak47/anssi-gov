@@ -24,7 +24,7 @@ ADMIN-DOCUMENTS
 		</div>
 		@endif
 		<ul uk-accordion>
-		    <li>
+		    <li class="uk-open">
 		        <a class="uk-accordion-title" href="#">NOUVEAU DOCUMENT</a>
 		        <div class="uk-accordion-content">
 							<!-- document add form -->

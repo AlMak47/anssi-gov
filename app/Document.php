@@ -30,4 +30,9 @@ class Document extends Model
       return $docs;
     }
 
+    public static function getFile(Array $tab) {
+      $file = Document::whereIn('type',$tab)->get();
+      return $file;
+    }
+
 }

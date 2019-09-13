@@ -12,7 +12,7 @@ ADMIN-VOIR AUSSI
 		<hr class="uk-divider-small">
 
 		<ul uk-accordion="multiple : true">
-		    <li>
+		    <li class="uk-open">
 		        <a class="uk-accordion-title" href="#">NOUVEAU VOLET</a>
 		        <div class="uk-accordion-content">
 		        	@if(session('success'))
@@ -23,6 +23,9 @@ ADMIN-VOIR AUSSI
 		        	{!!Form::open(['url'=>'/admin/post-page','id'=>'_form'])!!}
 		        	{!!Form::text('titre','',['class'=>'uk-input uk-margin-small','placeholder'=>'TITRE'])!!}
 							{!!Form::select('tag',[
+							'cadre_legal'	=>	'Cadre Legal',
+							'outil'	=>	'Outils',
+							'doc_form'	=>	'Documents et Formations',
 							'administration'=>'Administration',
 							'voir_aussi'=>'Voir Aussi'
 							],null,['placeholder'=>'Tag','class'=>'uk-select uk-margin-small'])!!}
@@ -43,7 +46,9 @@ ADMIN-VOIR AUSSI
 		        		<li><a class="uk-button uk-button-link" href="">{{str_limit($values->titre,100)}}</a>
 		        			<span class="uk-align-right">
 			        		 <a href="{{url('admin/edit-page',['slug'=>$values->slug])}}" class="uk-alert-primary" uk-icon="icon:pencil;ratio:.8">edit</a>
-			        		 <a href="" class="uk-alert-danger" uk-icon="icon:trash;ratio:.8">delete</a>
+									 {!!Form::open(['url'=>'admin/pages/'.$values->slug.'/delete'])!!}
+				        		 <button href="{{url('/admin/pages',[$values->slug,'delete'])}}" class="uk-alert-danger" uk-icon="icon:trash;ratio:.8">delete</button>
+										 {!!Form::close()!!}
 		        			</span>
 		        		</li>
 		        	@endforeach

@@ -33,7 +33,7 @@
 
 .menu-connex > ul > li > a.link-text {
   font-family: Consolas ;
-  word-spacing: -3px;
+  word-spacing: 0px;
   letter-spacing: 0px;
   font-size : 0.77rem;
   text-decoration: none;
@@ -112,13 +112,23 @@
 }
 
 .panel-right-header {
-  background : rgba(0,42,68,1);
+  /* background : rgba(0,42,68,1); */
+  background : rgb(0, 116, 180);
   color : #fff;
 
 }
 
 .copy {
-  border:solid 1px black;
   background: #fff;
   color: #000;
+}
+
+.right-menu {
+  /* border :solid 1px black; */
+  position : fixed;
+
+}
+.test {
+  top : 25%;
+  width : 15%;
 }

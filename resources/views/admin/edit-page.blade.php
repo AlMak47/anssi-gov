@@ -42,7 +42,7 @@ var quill = new Quill('#editor-container', {
   modules: {
     toolbar: [
 			['bold', 'italic', 'underline', 'strike','link'],        // toggled buttons
-		  ['blockquote', 'code-block'],
+		  ['blockquote', 'code-block','image'],
 
 		  [{ 'header': 1 }, { 'header': 2 }],               // custom button values
 		  [{ 'list': 'ordered'}, { 'list': 'bullet' }],

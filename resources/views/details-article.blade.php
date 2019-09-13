@@ -2,7 +2,7 @@
 <?php use Carbon\Carbon; ?>
 
 @section('title')
-ARTICLE-
+{{$details->titre}}
 @endsection
 
 @section('content')
@@ -20,61 +20,7 @@ ARTICLE-
 		</ul>
 <div class="" uk-grid>
 	<div class="uk-width-1-5@m uk-visible@l">
-		<div class='uk-border-rounded panel-right uk-box-shadow-small'>
-			<div class='uk-card-title uk-heading-divider uk-text-center panel-right-header uk-border-rounded uk-padding-small'>DOCUMENTATION</div>
-			<ul uk-accordion="collapsible: false">
-				<li>
-						<a class="uk-accordion-title" href="#">Lois</a>
-						@php
-						use Illuminate\Support\Facades\Storage;
-						$lois = App\Document::getLois();
-						@endphp
-						<div class="uk-accordion-content">
-								<ul class="uk-list">
-									@foreach($lois as $key=>$value)
-									<li><a href="{{asset(config('document.path').'/'.$value->file)}}" class="uk-button uk-button-text" href="" ><span uk-icon='icon:check;ratio:.8'></span> {{str_limit($value->titre,27,'...')}}</a></li>
-									@endforeach
-								</ul>
-						</div>
-				</li>
-				<li>
-						<a class="uk-accordion-title" href="#">Decrets</a>
-						@php
-						$docs = App\Document::getDecrets();
-						@endphp
-						<div class="uk-accordion-content">
-								<ul class="uk-list">
-									@foreach($docs as $key=>$value)
-									<li><a href="#" class="uk-button uk-button-text" href="" ><span uk-icon='icon:check;ratio:.8'></span> {{str_limit($value->titre,27,'...')}}</a></li>
-									@endforeach
-								</ul>
-						</div>
-				</li>
-				<li>
-						<a class="uk-accordion-title" href="#">Arrete</a>
-						@php
-						$docs = App\Document::getArrete();
-						@endphp
-						<div class="uk-accordion-content">
-								<ul class="uk-list">
-									@foreach($docs as $key=>$value)
-									<li><a href="#" class="uk-button uk-button-text" href="" ><span uk-icon='icon:check;ratio:.8'></span> {{str_limit($value->titre,27,'...')}}</a></li>
-									@endforeach
-								</ul>
-						</div>
-				</li>
-			</ul>
-		</div>
-		<div class='uk-border-rounded panel-right uk-box-shadow-small'>
-			<div class='uk-card-title uk-heading-divider uk-text-center panel-right-header uk-border-rounded uk-padding-small'>AUTRES LIENS</div>
-			<ul class='uk-list'>
-				<li><a class='uk-button uk-button-text' href="https://www.arpt.gov.gn" target="_blank" uk-tooltip="Autorite de Regulation des Postes et Telecommunication"><span uk-icon='icon:check;ratio:.8'></span> ARPT</a></li>
 
-				<li><a class='uk-button uk-button-text' href="https://www.mpten.gov.gn/" target="_blank" uk-tooltip="Ministere des Postes et Telecommunication et de l'Economie Numerique"><span uk-icon='icon:check;ratio:.8'></span> MPTEN</a></li>
-
-
-			</ul>
-		</div>
 	</div>
 	<div class="uk-width-3-5@m">
 		<article class="uk-article">
@@ -123,25 +69,36 @@ ARTICLE-
 		</ul>
 	</div>
 	<div class="uk-width-1-5@m uk-visible@l">
-		<div class='uk-border-rounded panel-right uk-box-shadow-small'>
-			<div class='uk-card-title uk-heading-divider uk-text-center panel-right-header uk-border-rounded uk-padding-small'>A VOIR AUSSI</div>
-			<ul class='uk-list'>
-				<?php App\Http\Controllers\AcceuilController::voirAussi(); ?>
-			</ul>
-		</div>
-		<div class='uk-border-rounded panel-right uk-box-shadow-small'>
-					<div class='uk-card-title uk-heading-divider uk-text-center panel-right-header uk-border-rounded uk-padding-small'>LIENS</div>
-					<ul class='uk-list'>
-						<li><a class='uk-button uk-button-text uk-text-left' href="https://cve.mitre.org/" target="_blank"><span uk-icon='icon:check;ratio:.8'></span> Common Vulnerability and Exposures</a></li>
-
-						<li><a class='uk-button uk-button-text uk-text-left' href="https://www.exploit-db.com/" target="_blank"><span uk-icon='icon:check;ratio:.8'></span> Exploit Database</a></li>
-
-						<li><a class='uk-button uk-button-text uk-text-left' href="https://nvd.nist.gov/vuln/detail/CVE" target="_blank"><span uk-icon='icon:check;ratio:.8'></span> NIST</a></li>
-
-						<li><a class='uk-button uk-button-text uk-text-left' href="https://www.cvedetails.com/" target="_blank"><span uk-icon='icon:check;ratio:.8'></span> CVE Details</a></li>
-
-					</ul>
+		<div class="" id="left-menu">
+			<div class='uk-border-rounded panel-right uk-box-shadow-small'>
+				<div class='uk-card-title uk-heading-divider uk-text-center panel-right-header uk-border-rounded uk-padding-remove'><a class="uk-button uk-text-bold" style="text-decoration :none;color:#fff" href="{{url('/voir-aussi',[App\Pages::where('slug','en-cas-dincidence')->first()->slug])}}">En cas d'incident</a></div>
+				<ul class="uk-list uk-list-divider">
+					<li class="uk-text-center uk-text-bold">
+						<span uk-icon="icon:receiver;ratio:2" class="phone-icone"></span> <span class="phone-number" style="text-decoration: none;">627 537 012</span>
+					</li>
+					<li class="uk-text-center">
+						<a href="https://support.anssi.gov.gn" target="_blank" class="uk-button-link">Cellule d'alerte</a>
+					</li>
+					<li class="uk-text-center">
+						<a href="{{url('/recrutement')}}" class="uk-button-link">Recrutement</a>
+					</li>
+				</ul>
+			</div>
+			<div class='uk-border-rounded uk-margin-top panel-right uk-box-shadow-small'>
+				<div class='uk-text-bold uk-text-center panel-right-header uk-border-rounded uk-padding-remove'>Nous Contacter</div>
+				<div class="uk-grid-small uk-padding  uk-child-width-1-3@m" uk-grid>
+					<div class="">
+						<a href="" class="uk-padding-small uk-border-rounded uk-button-primary"><span uk-icon="icon:facebook ;"></span></a>
+					</div>
+					<div class="">
+						<a href="" class="uk-padding-small uk-border-rounded uk-button-primary" style="background:skyblue"><span uk-icon="icon:twitter ;"></span></a>
+					</div>
+					<div class="">
+						<a href="" class="uk-padding-small uk-border-rounded uk-button-primary" style="background:red"><span uk-icon="icon:youtube ;"></span></a>
+					</div>
 				</div>
+			</div>
+		</div>
 	</div>
 </div>
 

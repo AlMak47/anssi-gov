@@ -18,4 +18,10 @@ class DocumentationController extends Controller
       $doc = Document::where("slug",$slug)->first();
       return Storage::download($doc->file);
     }
+
+    public function outilsIndex($slug) {
+      return view('outils')->withSlug($slug);
+    }
+
+
 }

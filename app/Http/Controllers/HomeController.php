@@ -9,6 +9,7 @@ use App\Http\Requests\PresentationRequest;
 use App\Http\Requests\DocumentRequest;
 use App\Http\Requests\ArticleEditRequest;
 use App\Http\Requests\VideoRequest;
+use App\Http\Requests\PartnerRequest;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -19,6 +20,7 @@ use App\Exceptions\ArticleException;
 use App\Article;
 use App\Pages;
 use App\Document;
+use App\Partners;
 
 class HomeController extends Controller
 {
@@ -97,7 +99,7 @@ class HomeController extends Controller
     }
 
     public function VoirIndex() {
-        $voirAussi = Pages::where('tag','voir_aussi')->orWhere('tag','administration')->get();
+        $voirAussi = Pages::where('tag','voir_aussi')->orWhere('tag','administration')->orWhere('tag','cadre_legal')->orWhere('tag','outil')->orWhere('tag','doc_form')->orderBy('created_at','desc')->get();
         return view("admin.voir-aussi")->withVoir($voirAussi);
     }
 
@@ -109,10 +111,10 @@ class HomeController extends Controller
         $page->contenu = $request->input('contenu');
         $page->tag = $request->input('tag');
         $page->save();
-        if($request->input('tag')  == 'voir_aussi' || $request->input('tag') == 'administration') {
-            return redirect('admin/voir-aussi')->with('success',"Volet Ajouté!");
-        } else {
+        if($request->input('tag')  == "presentation") {
             return redirect('admin/anssi-guinee')->with('success',"Volet Ajouté!");
+        } else {
+            return redirect('admin/voir-aussi')->with('success',"Volet Ajouté!");
         }
     }
 
@@ -181,5 +183,41 @@ public function makeEditArticle(ArticleEditRequest $request,$slug) {
 
     public function addVideo(VideoRequest $request) {
       dd($request);
+    }
+
+    // Supprimer une page
+
+    public function deletePage($slug) {
+      Pages::where('slug',$slug)->delete();
+      return redirect('/admin/voir-aussi')->withSuccess("Supprime avec success!");
+    }
+
+    // add a partner
+    public function getFormPartner() {
+      return view('admin.partner');
+    }
+
+    public function postFormPartner(PartnerRequest $request) {
+      try {
+        if($request->hasFile('logo')) {
+          $partners = new Partners;
+          $partners->slug = Str::slug($request->input('organisation','-'));
+          $partners->Organisation = $request->input('organisation');
+          $partners->tag = $request->input('tag');
+          $partners->logo = $partners->slug.'.'.$request->file('logo')->getClientOriginalExtension();
+          $partners->description = $request->input('description');
+          if($request->file('logo')->move(config('partner.path'),$partners->logo)) {
+            $partners->save();
+            return redirect('/admin/partners')->withSuccess("Ajouté avec success!");
+          }
+        }
+        else {
+          throw new Exception("Fichier invalie!");
+        }
+
+      } catch (ArticleException $e) {
+        return back()->with("_errors",$e->getMessage());
+      }
+
     }
 }

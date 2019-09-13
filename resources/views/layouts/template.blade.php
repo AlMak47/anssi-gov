@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{{config('app.name')}} - @yield('title')</title>
+	<title>@yield('title')</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="{{asset('image/logo.png')}}" type="image/png" />
@@ -20,12 +20,12 @@
 <body>
 	<!-- facebook plugin -->
 	<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v4.0"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v4.0&appId=2005235842908607&autoLogAppEvents=1"></script>
 	<!-- // -->
 	<!-- NAVBAR -->
 <div uk-sticky="animation:uk-animation-slide-top">
 	<!-- support center button -->
-	<a href="https://support.anssi.gov.gn" target="_blank" class="uk-button uk-button-primary support-center" id="support-center">Support Center</a>
+	<!-- <a href="https://support.anssi.gov.gn" target="_blank" class="uk-button uk-button-primary support-center" id="support-center">Support Center</a> -->
 	<!-- // -->
 	<!-- responsive menu -->
 	<div class="uk-box-shadow-small uk-hidden@l">
@@ -45,7 +45,7 @@
 	<div id="responsive-menu" uk-offcanvas="overlay: true;mode : reveal ">
     <div class="uk-offcanvas-bar uk-flex uk-flex-column" style="background : #034 !important;">
 			<ul class="uk-nav uk-nav-default uk-text-lighter uk-nav-parent-icon" uk-nav>
-				<li class="uk-active"><a href="{{url('/')}}">Acceuil</a></li>
+				<!-- <li class="uk-active"><a href="{{url('/')}}">Acceuil</a></li> -->
 					<li class="uk-parent">
 							<a href="#">Anssi Guinee</a>
 							<ul class="uk-nav-sub">
@@ -58,6 +58,7 @@
 										@endif
 							</ul>
 					</li>
+					<li class=""><a href="{{url('/news')}}">Cadre Legal</a></li>
 					<li class="uk-parent">
 					<a href="#">Documentation</a>
 					<ul class="uk-nav-sub">
@@ -110,25 +111,26 @@
     </div>
     <div class="menu-connex">
     	<ul class="">
-    		<li><a href="" class="uk-button-primary uk-border-rounded"><span uk-icon="icon:facebook"></span></a></li>
-    		<li><a href="" class="uk-button-primary uk-border-rounded" style="background:skyblue"><span  uk-icon="icon:twitter"></span></a></li>
-    		<li><a href="" class="uk-button-primary uk-border-rounded" style="background: red"><span  uk-icon="icon:youtube"></span></a></li>
+    		<li><a href="https://www.facebook.com/anssi.guinee.3" target="_blank" class="uk-button-primary uk-border-rounded"><span uk-icon="icon:facebook"></span></a></li>
+    		<li><a href="https://twitter.com/AnssiGuinee" target="_blank" class="uk-button-primary uk-border-rounded" style="background:skyblue"><span  uk-icon="icon:twitter"></span></a></li>
+    		<li><a href="" target="_blank" class="uk-button-primary uk-border-rounded" style="background: red"><span  uk-icon="icon:youtube"></span></a></li>
 <?php $voir = App\Pages::where('tag','voir_aussi')->orderBy('created_at','asc')->get(); ?>
 	@if($voir)
     @foreach($voir as $key => $value)
-            <li><a href="{{url('/voir-aussi',['slug'=>$value->slug])}}" class="uk-text-bold uk-text-uppercase uk-button-text link-text">{{$value->titre}}</a></li>
+            <li><a href="{{url('/voir-aussi',['slug'=>$value->slug])}}" class="uk-button-link uk-text-lighter link-text">{{$value->titre}}</a></li>
     @endforeach
+		<li><a href="{{url('/recrutement')}}" class="uk-button-link uk-text-lighter link-text">Recrutement</a> </li>
     @endif
     	</ul>
     </div>
 </nav>
-<nav class="uk-navbar-container uk-padding-small uk-light uk-visible@l" style="background: rgba(0,42,68,1)" uk-navbar>
+<nav class="uk-navbar-container uk-padding-small uk-light uk-visible@l" style="background:rgb(0, 116, 180);" uk-navbar>
 	<div class="uk-navbar-left">
-     <a>
-         <span uk-icon="icon:receiver;ratio:2" class="phone-icone"></span> <a class="phone-number uk-button-text" style="text-decoration: none;">627 537 012</a>
-     </a>
+     <span class="uk-text-bold">
+			  <span uk-icon="icon:receiver;ratio:2" class="phone-icone"></span> <span class="phone-number" style="text-decoration: none;">627 537 012</span>
+			</span>
     </div>
-    <div class="uk-navbar-center">
+    <div class="uk-navbar-center" style="width : 60%">
 
         <ul class="uk-navbar-nav">
             @if(Auth::check())
@@ -142,6 +144,7 @@
                         <li><a href="{{url('admin/medias')}}">Media</a></li>
                         <li><a href="{{url('admin/anssi-guinee')}}">ANSSI GUINEE</a></li>
                         <li><a href="{{url('admin/voir-aussi')}}">VOIR AUSSI</a></li>
+                        <li><a href="{{url('admin/partners')}}">Partenaires</a></li>
                         <li>
                             <a href=""  onclick="event.preventDefault();
                                                                  document.getElementById('logout-form').submit();">
@@ -156,24 +159,27 @@
                 </div>
             </li>
             @endif
-            <li class="uk-active"><a href="{{url('/')}}">Acceuil</a></li>
-            <li class="uk-active">
-                <a href="#">ANSSI GUINEE <span uk-icon="icon:triangle-down;ratio:.8"></span></a>
+            <!-- <li class="uk-active"><a href="{{url('/')}}">Acceuil</a></li> -->
+						<li class="uk-active"><a href="{{url('anssi-guinee',['slug'=>App\Pages::where('slug','missions-et-attributions')->first()->slug])}}">Anssi Guinee</a></li>
+            <!-- <li class="uk-active">
+                <a href="{{url('anssi-guinee',['slug'=>App\Pages::where('slug','missions-et-attributions')->first()->slug])}}">ANSSI GUINEE <span uk-icon="icon:triangle-down;ratio:.8"></span></a> -->
                 <!-- MENU PRESENTATIONS -->
                 <?php  $presentations = App\Pages::where('tag','presentation')->get(); ?>
 
                     @if($presentations->count() > 0)
-                <div class="uk-navbar-dropdown">
+                <!-- <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li class="uk-active"><a href="{{url('/anssi-guinee',['slug'=>App\Pages::where('slug','edito-du-ministre')->first()->slug])}}">{{App\Pages::where('slug','edito-du-ministre')->first()->titre}}</a></li>
                         <li class="uk-active"><a href="{{url('/anssi-guinee',['slug'=>App\Pages::where('slug','edito-du-dg')->first()->slug])}}">{{App\Pages::where('slug','edito-du-dg')->first()->titre}}</a></li>
                         <li class="uk-active"><a href="{{url('/anssi-guinee',['slug'=>App\Pages::where('slug','missions-et-attributions')->first()->slug])}}">{{App\Pages::where('slug','missions-et-attributions')->first()->titre}}</a></li>
                         <li class="uk-active"><a href="{{url('/anssi-guinee',['slug'=>App\Pages::where('slug','cybersecurite-en-guinee')->first()->slug])}}">{{App\Pages::where('slug','cybersecurite-en-guinee')->first()->titre}}</a></li>
                     </ul>
-                </div>
+                </div> -->
                     @endif
-            </li>
-            <li class="uk-active">
+            <!-- </li> -->
+						<li class="uk-active"><a href="{{url('/cadre-legal',['documents-strategiques'])}}">Cadre Legal</a></li>
+						<li class="uk-active"><a href="{{url('/outils',['simples-utilisateurs'])}}">Outils</a></li>
+            <!-- <li class="uk-active">
                 <a href="#">Documentation <span uk-icon="icon:triangle-down;ratio:.8"></span></a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -184,10 +190,12 @@
                         <li><a href="{{url('documentation',['slug'=>'autre'])}}">Autres</a></li>
                     </ul>
                 </div>
-            </li>
-            <li class="uk-active"><a href="{{url('/news')}}">Actualités</a></li>
-            <li class="uk-active"><a href="{{url('/formation/')}}">Formation</a></li>
-            <li class="uk-active">
+            </li> -->
+            <li class="uk-active"><a href="{{url('/partenariats')}}">Partenariats</a></li>
+            <!-- <li class="uk-active"><a href="{{url('/news')}}">Actualités</a></li> -->
+            <li class="uk-active"><a href="{{url('/documents-et-formations',['documentation'])}}">Documents et Formations</a></li>
+            <li class="uk-active"><a href="{{url('/contact-us/')}}">Contact</a></li>
+            <!-- <li class="uk-active">
                 <a href="#">Mediatheque <span uk-icon="icon:triangle-down;ratio:.8"></span></a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -196,8 +204,8 @@
                         <li><a href="#">Video</a></li>
                     </ul>
                 </div>
-            </li>
-            <li class="uk-active">
+            </li> -->
+            <!-- <li class="uk-active">
                 <a href="#">Contact <span uk-icon="icon:triangle-down;ratio:.8"></span></a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -206,7 +214,7 @@
                         <li><a href="{{url('contact-us')}}">Contactez Nous</a></li>
                     </ul>
                 </div>
-            </li>
+            </li> -->
         </ul>
 
     </div>
@@ -245,7 +253,7 @@
 @php
 $administration = App\Pages::where('tag','administration')->orderBy('created_at','desc')->get();
 @endphp
-<div class="uk-section uk-section-secondary uk-padding-small" style="background: rgba(0,42,68,1);">
+<div class="uk-section uk-section-secondary uk-padding-small" style="background: rgb(0, 116, 180);">
 	<div class="uk-container">
 		<!-- responsive footer -->
 		@if($administration)
@@ -283,11 +291,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 	    <li class="">
 	        <a class="uk-accordion-title" href="#">PARTENAIRES</a>
 	        <div class="uk-accordion-content">
-	            <ul class="uk-list">
-								@foreach($administration as $key=>$value)
-								<li><a href="{{url('voir-aussi',[$value->slug])}}">{{$value->titre}}</a></li>
-								@endforeach
-	            </ul>
+
 	        </div>
 	    </li>
 		</ul>
@@ -299,7 +303,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 				<h3>ADMINISTRATION</h3>
 				<ul class="uk-list">
 					@foreach($administration as $key=>$value)
-					<li><a href="{{url('voir-aussi',[$value->slug])}}">{{$value->titre}}</a></li>
+					<li><a href="{{url('/administration',[$value->slug])}}">{{$value->titre}}</a></li>
 					@endforeach
 				</ul>
 			</div>
@@ -307,7 +311,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 				<h3>ENTREPRISES</h3>
 				<ul class="uk-list">
 					@foreach($administration as $key=>$value)
-					<li><a href="{{url('voir-aussi',[$value->slug])}}">{{$value->titre}}</a></li>
+					<li><a href="{{url('/entreprise',[$value->slug])}}">{{$value->titre}}</a></li>
 					@endforeach
 				</ul>
 			</div>
@@ -315,17 +319,19 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 				<h3>PARTICULIERS</h3>
 				<ul class="uk-list">
 					@foreach($administration as $key=>$value)
-					<li><a href="{{url('voir-aussi',[$value->slug])}}">{{$value->titre}}</a></li>
+					<li><a href="{{url('particuliers',[$value->slug])}}">{{$value->titre}}</a></li>
 					@endforeach
 				</ul>
 			</div>
 			<div>
 				<h3>PARTENAIRES</h3>
+				@php
+				$partners =App\Partners::all();
+				@endphp
 				<ul class="uk-list">
-					@foreach($administration as $key=>$value)
-					<li><a href="{{url('voir-aussi',[$value->slug])}}">{{$value->titre}}</a></li>
+					@foreach($partners as $key=>$value)
+					<li><a href="">{{$value->organisation}}</a></li>
 					@endforeach
-				</ul>
 			</div>
 		</div>
 		@endif
@@ -417,12 +423,13 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
             }
         });
 
-				// support center effects
 				$(window).scroll(function () {
-					if($(this).scrollTop() > 0  ) {
-						$("#support-center").show(300);
+					if($(this).scrollTop() > 200) {
+						$("#right-menu").addClass('right-menu test');
+						$("#left-menu").addClass('right-menu test');
 					} else {
-						$("#support-center").hide(300);
+						$("#right-menu").removeClass('right-menu test');
+						$("#left-menu").removeClass('right-menu test');
 					}
 				});
     });

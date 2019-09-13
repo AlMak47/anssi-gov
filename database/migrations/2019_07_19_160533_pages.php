@@ -14,14 +14,14 @@ class Pages extends Migration
     public function up()
     {
         //
-        Schema::create('pages',function (Blueprint $table) {
-            $table->string('slug');
-            $table->primary('slug');
-            $table->text('contenu');
-            $table->string('titre');
-            $table->enum('tag',['presentation','voir_aussi']);
-            $table->timestamps();
-        });
+        // Schema::create('pages',function (Blueprint $table) {
+        //     $table->string('slug');
+        //     $table->primary('slug');
+        //     $table->text('contenu');
+        //     $table->string('titre');
+        //     $table->enum('tag',['presentation','voir_aussi']);
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -32,6 +32,6 @@ class Pages extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('pages');
+        // Schema::dropIfExists('pages');
     }
 }
