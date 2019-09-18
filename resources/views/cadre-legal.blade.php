@@ -41,7 +41,7 @@ Cadre Legal
 				@endphp
 				@foreach($files as $key=>$value)
 				<div class=" uk-button-group uk-width-1-1">
-					<a class="uk-button uk-button-default uk-width-1-1 uk-text-left uk-margin-small-bottom" uk-tooltip="{{$value->titre}}">{{str_limit($value->titre,86,'...')}}</a>
+					<a class="uk-button uk-button-default uk-width-1-1@m uk-text-left uk-margin-small-bottom" uk-tooltip="{{$value->titre}}">{{str_limit($value->titre,86,'...')}}</a>
 				    <div class="uk-inline">
 				        <!-- The button toggling the dropdown -->
 				        <a href="{{asset('documents/'.$value->file)}}" target="_blank" style="background : rgb(0, 116, 180);color:#fff" class="uk-button uk-button-default" type="button"> <span uk-icon="icon:download"></span></a>
@@ -60,7 +60,7 @@ Cadre Legal
 								<span uk-icon="icon:receiver;ratio:2" class="phone-icone"></span> <span class="phone-number" style="text-decoration: none;">627 537 012</span>
 							</li>
 							<li class="uk-text-center">
-								<a href="#" class="uk-button-link">Cellule d'alerte</a>
+								<a href="https://support.anssi.gov.gn" class="uk-button-link">Cellule d'alerte</a>
 							</li>
 							<li class="uk-text-center">
 								<a href="{{url('/recrutement')}}" class="uk-button-link">Recrutement</a>

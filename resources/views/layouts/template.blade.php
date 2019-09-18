@@ -126,8 +126,8 @@
 </nav>
 <nav class="uk-navbar-container uk-padding-small uk-light uk-visible@l" style="background:rgb(0, 116, 180);" uk-navbar>
 	<div class="uk-navbar-left">
-     <span class="uk-text-bold">
-			  <span uk-icon="icon:receiver;ratio:2" class="phone-icone"></span> <span class="phone-number" style="text-decoration: none;">627 537 012</span>
+     <span class="uk-text-bold uk-text-large uk-button uk-button-default uk-border-rounded">
+			  <span uk-icon="icon:receiver;ratio:1.5" class="phone-icone"></span> <span class="phone-number" style="text-decoration: none;">+224 627 537 012</span>
 			</span>
     </div>
     <div class="uk-navbar-center" style="width : 60%">
@@ -253,7 +253,7 @@
 @php
 $administration = App\Pages::where('tag','administration')->orderBy('created_at','desc')->get();
 @endphp
-<div class="uk-section uk-section-secondary uk-padding-small" style="background: rgb(0, 116, 180);">
+<div class="uk-section uk-section-secondary uk-padding-small uk-margin-top" style="background: rgb(0, 116, 180);">
 	<div class="uk-container">
 		<!-- responsive footer -->
 		@if($administration)
@@ -404,7 +404,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 
                  $(".denom").animate({
                     'width' : '230px',
-                    'font-size' : '0.88rem'
+                    'font-size' : '1rem'
                 },0,'linear');
 
                 $(".sigle").animate({

@@ -17,17 +17,7 @@
 
 		<div class="uk-grid-medium" uk-grid>
 			<div class="uk-width-1-5@m uk-visible@l">
-				<div class='uk-border-rounded panel-right ' id="right-menu">
-					<!-- volet anssi guinee -->
-					<ul class="uk-list uk-list-divider">
-						<?php  $presentations = App\Pages::where('tag','presentation')->get(); ?>
-								@if($presentations->count() > 0)
-										<li><a class="uk-button-link" style="text-decoration : none !important ;" href="{{url('/vous-etes/administration',['slug'=>App\Pages::where('slug','precautions-elementaires')->first()->slug])}}"> {{App\Pages::where('slug','precautions-elementaires')->first()->titre}}</a></li>
-										<li><a class="uk-button-link" style="text-decoration : none !important ;" href="{{url('/vous-etes/administration',['slug'=>App\Pages::where('slug','principales-menaces')->first()->slug])}}"> {{App\Pages::where('slug','principales-menaces')->first()->titre}}</a></li>
-										<li><a class="uk-button-link" style="text-decoration : none !important ;" href="{{url('/vous-etes/administration',['slug'=>App\Pages::where('slug','bonne-pratiques')->first()->slug])}}">{{App\Pages::where('slug','bonne-pratiques')->first()->titre}}</a></li>
-								@endif
-					</ul>
-				</div>
+				
 				</div>
 
 			<div class="uk-width-3-5@m">

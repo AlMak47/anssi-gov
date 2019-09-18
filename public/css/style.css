@@ -43,11 +43,11 @@
 .denom {
   border-left:solid 1px black;
   width:230px;
-  font-size: 0.88rem;
+  font-size: 1rem;
   margin :1%;
   padding:2%;
   font-family: Arial;
-  line-height: 1;
+  line-height: 1.1;
   vertical-align: middle;
 
 }
@@ -126,6 +126,7 @@
 .right-menu {
   /* border :solid 1px black; */
   position : fixed;
+  margin-bottom : 200px;
 
 }
 .test {

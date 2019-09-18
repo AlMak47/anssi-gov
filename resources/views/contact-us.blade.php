@@ -27,7 +27,7 @@ Contactez Nous
 			</div>
 			<div class="uk-width-3-5@m">
 				<div class="uk-heading-divider uk-h3">CONTACTEZ NOUS</div>
-				{!!Form::open()!!}
+				{!!Form::open(['url'=>'#'])!!}
 				<div class="uk-child-width-1-2@m" uk-grid>
 					<div>
 						<label>Nom</label>
@@ -50,7 +50,7 @@ Contactez Nous
 					<label>Message</label>
 					{!!Form::textarea('message','',['class'=>'uk-textarea uk-margin-small','placeholder'=>'Votre message ici...'])!!}
 				</div>
-				{!!Form::submit('Envoyer',['class'=>'uk-button form-button uk-light'])!!}
+				{!!Form::submit('Envoyer',['class'=>'uk-button form-button uk-light','disabled'=>''])!!}
 				{!!Form::close()!!}
 				<!-- maps -->
 				<div class="uk-margin-top">
@@ -69,7 +69,7 @@ Contactez Nous
 								<a href="https://support.anssi.gov.gn" class="uk-button-link">Cellule d'alerte</a>
 							</li>
 							<li class="uk-text-center">
-								<a href="#" class="uk-button-link">Recrutement</a>
+								<a href="{{url('/recrutement')}}" class="uk-button-link">Recrutement</a>
 							</li>
 						</ul>
 					</div>

@@ -9,7 +9,7 @@ Agence Nationale de la Securite des Systemes d'Information
 <div class="uk-child-width-1-2@m" uk-grid>
 <div class="uk-background-default" style="padding-top : 1rem">
   <!-- first column -->
-  <div class="uk-heading uk-text-center uk-h4">
+  <div class="uk-heading uk-text-center uk-h4" style="background : url(asset('image/guinee.jpg'))">
     VOUS ETES UN(E)
   </div>
   <hr class="uk-divider-small uk-margin-small uk-text-center">
@@ -18,8 +18,8 @@ Agence Nationale de la Securite des Systemes d'Information
     <div class="">
       <!-- administration -->
       <a href="{{url('/vous-etes/administration',['precautions-elementaires'])}}" class="uk-button-default">
-        <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 5rem !important;background : #143">
-          <img src="{{asset('svg-icons/city-hall.svg')}}" style="color : #fff;" width="100%" class="img-svg"  uk-svg="stroke-animation : true">
+        <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 5rem !important;background : #900">
+          <img src="{{asset('svg-icons/arm.svg')}}" style="color : #fff;" width="100%" class="img-svg"  uk-svg="stroke-animation : true">
         </div>
         <div class="uk-text-lead uk-text-center">
           Administration
@@ -31,7 +31,7 @@ Agence Nationale de la Securite des Systemes d'Information
       <!-- entreprise -->
 
       <a href="{{url('vous-etes/entreprise',['precautions-elementaires'])}}" class="uk-button-default">
-        <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 5rem !important;background : #876">
+        <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 5rem !important;background : #959000">
           <img src="{{asset('svg-icons/skycraper.svg')}}" style="color: #fff"  width="100%" uk-svg>
         </div>
         <div class="uk-text-lead uk-text-center">
@@ -44,7 +44,7 @@ Agence Nationale de la Securite des Systemes d'Information
     <div class="">
     <!-- particulier -->
     <a href="{{url('vous-etes/particulier',['precautions-elementaires'])}}" class="uk-button-default">
-      <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 5rem !important;background : #912">
+      <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 5rem !important;background : #090">
         <img src="{{asset('svg-icons/home.svg')}}" style="color: #fff"  width="100%" uk-svg>
       </div>
       <div class="uk-text-lead uk-text-center">
@@ -71,10 +71,7 @@ Agence Nationale de la Securite des Systemes d'Information
           @endforeach
           @endif
       </ul>
-      <!-- <div class="uk-light">
-          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-      </div> -->
+
   </div>
 </div>
 </div>
@@ -143,7 +140,7 @@ Agence Nationale de la Securite des Systemes d'Information
 						<div class='uk-card-title uk-heading-divider uk-text-center panel-right-header uk-border-rounded uk-padding-remove'><a class="uk-button uk-text-bold" style="text-decoration :none;color:#fff" href="{{url('/voir-aussi',[App\Pages::where('slug','en-cas-dincidence')->first()->slug])}}">En cas d'incident</a></div>
 						<ul class="uk-list uk-list-divider">
 							<li class="uk-text-center uk-text-bold">
-								<span uk-icon="icon:receiver;ratio:2" class="phone-icone"></span> <span class="phone-number" style="text-decoration: none;">627 537 012</span>
+								<span uk-icon="icon:receiver;ratio:2" class="phone-icone"></span> <span class="phone-number" style="text-decoration: none;">+224 627 537 012</span>
 							</li>
 							<li class="uk-text-center">
 								<a href="https://support.anssi.gov.gn" class="uk-button-link">Cellule d'alerte</a>

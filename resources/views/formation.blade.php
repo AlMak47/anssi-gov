@@ -57,7 +57,7 @@ Documents et Formations
 								<span uk-icon="icon:receiver;ratio:2" class="phone-icone"></span> <span class="phone-number" style="text-decoration: none;">627 537 012</span>
 							</li>
 							<li class="uk-text-center">
-								<a href="#" class="uk-button-link">Cellule d'alerte</a>
+								<a href="https://support.anssi.gov.gn" target="_blank" class="uk-button-link">Cellule d'alerte</a>
 							</li>
 							<li class="uk-text-center">
 								<a href="{{url('/recrutement')}}" class="uk-button-link">Recrutement</a>
