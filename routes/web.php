@@ -13,6 +13,16 @@
 
 //
 Route::get('/','AcceuilController@index');
+// envoi de l'email de contact
+// Route::get('/send-mail',function () {
+//   return new App\Mail\Contact([
+//       'nom' => 'Durand',
+//       'email' => 'durand@chezlui.com',
+//       'message' => 'Je voulais vous dire que votre site est magnifique !'
+//       ]);
+// });
+// Route::get('/send-mail','ContactController@sendContactForm');
+// #
 Route::get('/partenariats','AcceuilController@partenariatsIndex');
 Route::get('/anssi-guinee/{slug}','PresentationController@detailPresentation');
 Route::get('/anssi-guinee','PresentationController@index');
@@ -28,6 +38,8 @@ Route::get('/news','ArticleController@index');
 Route::get("/outils/{slug}",'DocumentationController@outilsIndex');
 
 Route::get('/contact-us','ContactController@getForm');
+Route::post('/contact-us','ContactController@sendContactForm');
+
 Route::get('/documents-et-formations/{slug}','FormationController@index');
 Route::get('/recrutement','RecrutementController@index');
 

@@ -337,7 +337,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 		@endif
 	</div>
 </div>
-<div class="uk-text-center copy uk-padding-remove uk-visible@l">&copy; ANSSI GUINEE {{date('Y')}}</div>
+<div class="uk-text-center copy uk-padding-remove uk-visible@l">&copy; ANSSI GUINEE {{date('Y')}} | Developp&eacute; par <a href="https://www.smartechguinee.com" target="_blank">Smartech</a></div>
 <div class="uk-text-center copy uk-margin-xlarge-bottom uk-padding-remove uk-hidden@l">&copy; ANSSI GUINEE {{date('Y')}}</div>
 
 <!-- // -->

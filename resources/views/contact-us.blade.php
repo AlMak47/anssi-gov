@@ -26,8 +26,22 @@ Contactez Nous
 				</div>
 			</div>
 			<div class="uk-width-3-5@m">
+				@if(session('success'))
+				<div class="uk-alert-success" uk-alert>
+					<a href="#" class="uk-alert-close" uk-close></a>
+					<p>{{session('success')}}</p>
+				</div>
+				@endif
+				@if($errors->any())
+				@foreach($errors->all() as $error)
+				<div class="uk-alert-danger" uk-alert>
+					<a href="#" class="uk-alert-close" uk-close></a>
+					<p>{{ $error }}</p>
+				</div>
+				@endforeach
+				@endif
 				<div class="uk-heading-divider uk-h3">CONTACTEZ NOUS</div>
-				{!!Form::open(['url'=>'#'])!!}
+				{!!Form::open(['url'=>url()->current(),'id'=>'contact-form'])!!}
 				<div class="uk-child-width-1-2@m" uk-grid>
 					<div>
 						<label>Nom</label>
@@ -50,7 +64,8 @@ Contactez Nous
 					<label>Message</label>
 					{!!Form::textarea('message','',['class'=>'uk-textarea uk-margin-small','placeholder'=>'Votre message ici...'])!!}
 				</div>
-				{!!Form::submit('Envoyer',['class'=>'uk-button form-button uk-light','disabled'=>''])!!}
+				{!!Form::submit('Envoyer',['class'=>'uk-button form-button uk-light','id'=>'submit-form'])!!}
+				<div id="loader" style="color : darkblue"  uk-spinner>  Envoi en cours ...  </div>
 				{!!Form::close()!!}
 				<!-- maps -->
 				<div class="uk-margin-top">
@@ -70,7 +85,7 @@ Contactez Nous
 							</li>
 							<li class="uk-text-center">
 								<a href="{{url('/recrutement')}}" class="uk-button-link">Recrutement</a>
-							</li>
+							</li>bonjor tout
 						</ul>
 					</div>
 					<div class='uk-border-rounded uk-margin-top panel-right uk-box-shadow-small'>
@@ -94,4 +109,15 @@ Contactez Nous
 
 </div>
 
+@endsection
+@section("scripts")
+<script type="text/javascript">
+	$(function () {
+		$("#loader").hide();
+		$("#contact-form").on('submit',function () {
+			$("#submit-form").hide(100)
+			$("#loader").show(100)
+		})
+	})
+</script>
 @endsection

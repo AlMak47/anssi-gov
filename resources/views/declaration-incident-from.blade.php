@@ -130,7 +130,7 @@ Declaration d'incidence
 					{!!Form::textarea('description_impacts','',['class'=>'uk-textarea uk-margin-small'])!!}
 				</div>
 				<div class="uk-heading-divider uk-h3">Traitement de l'incident</div>
-				{!!Form::submit('Envoyer',['class'=>'uk-button uk-margin-small form-button uk-light'])!!}
+				{!!Form::submit('Envoyer',['class'=>'uk-button uk-margin-small form-button uk-light','disabled'=>''])!!}
 				{!!Form::close()!!}
 			</div>
 			<div class="uk-width-1-5@m uk-visible@l">
