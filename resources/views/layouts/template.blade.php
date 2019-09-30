@@ -113,7 +113,7 @@
     	<ul class="">
     		<li><a href="https://www.facebook.com/anssi.guinee.3" target="_blank" class="uk-button-primary uk-border-rounded"><span uk-icon="icon:facebook"></span></a></li>
     		<li><a href="https://twitter.com/AnssiGuinee" target="_blank" class="uk-button-primary uk-border-rounded" style="background:skyblue"><span  uk-icon="icon:twitter"></span></a></li>
-    		<li><a href="" target="_blank" class="uk-button-primary uk-border-rounded" style="background: red"><span  uk-icon="icon:youtube"></span></a></li>
+    		<li><a href="https://www.youtube.com/channel/UCmof-FnBWW2m8LAXrydUsJg/featured" target="_blank" class="uk-button-primary uk-border-rounded" style="background: red"><span  uk-icon="icon:youtube"></span></a></li>
 <?php $voir = App\Pages::where('tag','voir_aussi')->orderBy('created_at','asc')->get(); ?>
 	@if($voir)
     @foreach($voir as $key => $value)

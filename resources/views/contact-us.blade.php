@@ -26,6 +26,10 @@ Contactez Nous
 				</div>
 			</div>
 			<div class="uk-width-3-5@m">
+				<!-- maps -->
+				<div class="uk-margin-top">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.6891269654734!2d-13.653117602503857!3d9.60672626929317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf1cd6131ddc6abd%3A0x520c269711cb5523!2sPlaza%20Diamant!5e1!3m2!1sfr!2s!4v1568342936414!5m2!1sfr!2s" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+				</div>
 				@if(session('success'))
 				<div class="uk-alert-success" uk-alert>
 					<a href="#" class="uk-alert-close" uk-close></a>
@@ -67,10 +71,7 @@ Contactez Nous
 				{!!Form::submit('Envoyer',['class'=>'uk-button form-button uk-light','id'=>'submit-form'])!!}
 				<div id="loader" style="color : darkblue"  uk-spinner>  Envoi en cours ...  </div>
 				{!!Form::close()!!}
-				<!-- maps -->
-				<div class="uk-margin-top">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.6891269654734!2d-13.653117602503857!3d9.60672626929317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf1cd6131ddc6abd%3A0x520c269711cb5523!2sPlaza%20Diamant!5e1!3m2!1sfr!2s!4v1568342936414!5m2!1sfr!2s" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-				</div>
+
 			</div>
 			<div class="uk-width-1-5@m">
 				<div class="" id="right-menu">
@@ -98,7 +99,7 @@ Contactez Nous
 								<a href="https://www.twitter.com/AnssiGuinee" target="_blank" class="uk-padding-small uk-border-rounded uk-button-primary" style="background:skyblue"><span uk-icon="icon:twitter ;"></span></a>
 							</div>
 							<div class="">
-								<a href="" class="uk-padding-small uk-border-rounded uk-button-primary" style="background:red"><span uk-icon="icon:youtube ;"></span></a>
+								<a href="https://www.youtube.com/channel/UCmof-FnBWW2m8LAXrydUsJg/featured" target="_blank" class="uk-padding-small uk-border-rounded uk-button-primary" style="background:red"><span uk-icon="icon:youtube ;"></span></a>
 							</div>
 						</div>
 					</div>
