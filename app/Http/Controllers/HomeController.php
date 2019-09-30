@@ -137,9 +137,10 @@ public function makeEditArticle(ArticleEditRequest $request,$slug) {
   $article->slug = Str::slug($request->input('titre'),'-');
   $article->titre   = $request->input('titre');
   $article->contenu = $request->input('contenu');
+  
   if($request->hasFile('image')) {
     //change post's image
-      if(File::delete(asset('article/'.$article->image))) {
+      if(File::delete('article/'.$article->image)) {
         if($request->file('image')->move(config('article.path'),$article->image)) {
           $article->save();
           return redirect("/admin/articles/".$article->slug."/edit")->withSuccess("Modification enregistrée!");
