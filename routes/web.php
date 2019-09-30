@@ -64,7 +64,10 @@ Route::post('/admin/post-page','HomeController@postPresentation');
 Route::post('/admin/pages/{slug}/delete','HomeController@deletePage');
 
 Route::post('/admin/documents/add','HomeController@addDocument');
+
 Route::post('/admin/post-article','HomeController@postArticle');
 Route::post('/admin/articles/{slug}/edit','HomeController@makeEditArticle');
+Route::post('/admin/articles/{slug}/delete','HomeController@deleteArticle');
+
 Route::post('/admin/media/add-video','HomeController@addVideo');
 Route::post('/admin/partner/add','HomeController@postFormPartner');

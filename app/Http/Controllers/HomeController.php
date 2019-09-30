@@ -83,6 +83,26 @@ class HomeController extends Controller
         }
     }
 
+    // suppression d'un article
+    public function deleteArticle(Request $request, $slug) {
+      try {
+        $articleForArticle =  Article::find($slug);
+        if($articleForArticle) {
+          if(File::delete('article/'.$articleForArticle->image)) {
+            $articleForArticle->delete();
+            return redirect('/admin/articles')->withSuccess("Success!");
+          } else {
+            throw new ArticleException("Erreur !");
+          }
+        } else {
+          throw new ArticleException("Donnee inexistante!");
+        }
+
+      } catch (ArticleException $e) {
+        return back()->withError($e->getMessage());
+      }
+    }
+    // @####
     public function documentIndex() {
         return view('admin.document');
     }
@@ -137,7 +157,7 @@ public function makeEditArticle(ArticleEditRequest $request,$slug) {
   $article->slug = Str::slug($request->input('titre'),'-');
   $article->titre   = $request->input('titre');
   $article->contenu = $request->input('contenu');
-  
+
   if($request->hasFile('image')) {
     //change post's image
       if(File::delete('article/'.$article->image)) {

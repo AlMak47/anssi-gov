@@ -9,7 +9,16 @@ ADMIN-ARTICLE
 	<div class="uk-container">
 		<h3>ARTICLES</h3>
 		<hr class="uk-divider-small">
-
+		@if(session('success'))
+		<div class="uk-alert uk-alert-success">
+			<div>{{session('success')}}</div>
+		</div>
+		@endif
+		@if(session('error'))
+		<div class="uk-alert uk-alert-danger">
+			<div>{{session('error')}}</div>
+		</div>
+		@endif
 		<ul uk-accordion="collapsible: true">
 		    <li>
 		        <a class="uk-accordion-title" href="#">NOUVEL ARTICLE</a>
@@ -20,17 +29,6 @@ ADMIN-ARTICLE
 		        		<div>{{$errors->first('titre')}}</div>
 		        		<div>{{$errors->first('image')}}</div>
 		        		<div>{{$errors->first('contenu')}}</div>
-		        	</div>
-		        	@endif
-
-		        	@if(session('success'))
-		        	<div class="uk-alert uk-alert-success">
-		        		<div>{{session('success')}}</div>
-		        	</div>
-		        	@endif
-		        	@if(session('error'))
-		        	<div class="uk-alert uk-alert-danger">
-		        		<div>{{session('error')}}</div>
 		        	</div>
 		        	@endif
 		        	{!!Form::open(['url'=>'/admin/post-article','files'=>true,'id'=>'_form'])!!}
@@ -52,7 +50,9 @@ ADMIN-ARTICLE
 		        			<a class="uk-button uk-button-link" href="">{{str_limit($values->titre,100)}}</a>
 		        			<span class="uk-align-right">
 				        		 <a href="{{url('/admin/articles',[$values->slug,'edit'])}}" class="uk-alert-primary" uk-icon="icon:pencil;ratio:.8">edit</a>
-				        		 <a href="" class="uk-alert-danger" uk-icon="icon:trash;ratio:.8">delete</a>
+										 {!!Form::open(['url'=>'/admin/articles/'.$values->slug.'/delete'])!!}
+				        		 <button type="submit" class="uk-alert-danger" uk-icon="icon:trash;ratio:.8">delete</button>
+										 {!!Form::close()!!}
 		        			</span>
 		        		</li>
 		        	@endforeach
