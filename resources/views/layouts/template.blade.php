@@ -117,9 +117,9 @@
 <?php $voir = App\Pages::where('tag','voir_aussi')->orderBy('created_at','asc')->get(); ?>
 	@if($voir)
     @foreach($voir as $key => $value)
-            <li><a href="{{url('/voir-aussi',['slug'=>$value->slug])}}" class="uk-button-link uk-text-lighter link-text">{{$value->titre}}</a></li>
+            <li><a href="{{url('/voir-aussi',['slug'=>$value->slug])}}" class="uk-button-link uk-text-lighterx">{{$value->titre}}</a></li>
     @endforeach
-		<li><a href="{{url('/recrutement')}}" class="uk-button-link uk-text-lighter link-text">Recrutement</a> </li>
+		<li><a href="{{url('/recrutement')}}" class="uk-button-link uk-text-lighter">Recrutement</a> </li>
     @endif
     	</ul>
     </div>
@@ -141,7 +141,7 @@
                         <li class="uk-active"><a href="{{url('admin/articles')}}">Articles</a></li>
                         <li><a href="{{url('admin/documents')}}">Documents</a></li>
                         <!-- <li><a href="{{url('admin/banniere')}}">banniere</a></li> -->
-                        <li><a href="{{url('admin/medias')}}">Media</a></li>
+                        <!-- <li><a href="{{url('admin/medias')}}">Media</a></li> -->
                         <li><a href="{{url('admin/anssi-guinee')}}">ANSSI GUINEE</a></li>
                         <li><a href="{{url('admin/voir-aussi')}}">VOIR AUSSI</a></li>
                         <li><a href="{{url('admin/partners')}}">Partenaires</a></li>

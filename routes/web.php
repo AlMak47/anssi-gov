@@ -12,7 +12,6 @@
 */
 
 //
-Route::get('/','AcceuilController@index');
 // envoi de l'email de contact
 // Route::get('/send-mail',function () {
 //   return new App\Mail\Contact([
@@ -23,6 +22,8 @@ Route::get('/','AcceuilController@index');
 // });
 // Route::get('/send-mail','ContactController@sendContactForm');
 // #
+
+Route::get('/','AcceuilController@index');
 Route::get('/partenariats','AcceuilController@partenariatsIndex');
 Route::get('/anssi-guinee/{slug}','PresentationController@detailPresentation');
 Route::get('/anssi-guinee','PresentationController@index');

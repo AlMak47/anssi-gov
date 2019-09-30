@@ -85,7 +85,7 @@ Contactez Nous
 							</li>
 							<li class="uk-text-center">
 								<a href="{{url('/recrutement')}}" class="uk-button-link">Recrutement</a>
-							</li>bonjor tout
+							</li>
 						</ul>
 					</div>
 					<div class='uk-border-rounded uk-margin-top panel-right uk-box-shadow-small'>
