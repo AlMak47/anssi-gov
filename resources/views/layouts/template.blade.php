@@ -126,7 +126,7 @@
 </nav>
 <nav class="uk-navbar-container uk-padding-small uk-light uk-visible@l" style="background:rgb(0, 116, 180);" uk-navbar>
 	<div class="uk-navbar-left">
-     <span class="uk-text-bold uk-text-large uk-button uk-button-default uk-border-rounded">
+     <span class="uk-text-bold uk-text-large uk-button" style="color :#fff;">
 			  <span uk-icon="icon:receiver;ratio:1.5" class="phone-icone"></span> <span class="phone-number" style="text-decoration: none;">+224 627 537 012</span>
 			</span>
     </div>
@@ -353,7 +353,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
         anime({
             targets : '.phone-icone',
             rotateY :360,
-            translateY : 10,
+            translateY : 5,
             loop : true ,
             delay : 500,
             duration : 2000,
