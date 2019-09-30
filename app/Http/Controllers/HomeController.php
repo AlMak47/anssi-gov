@@ -50,6 +50,11 @@ class HomeController extends Controller
       $edit   = Article::where('slug',$slug)->first();
       return view('admin.edit-article')->withEdit($edit);
     }
+    // edit partner
+    public function editPartner($slug) {
+      $edit = Partners::find($slug);
+      return view('admin.edit-partner')->withEdit($edit);
+    }
 // add new post to the news
     public function postArticle(ArticleRequest $request) {
         try {
@@ -215,7 +220,8 @@ public function makeEditArticle(ArticleEditRequest $request,$slug) {
 
     // add a partner
     public function getFormPartner() {
-      return view('admin.partner');
+      $partners = Partners::all();
+      return view('admin.partner')->withPartners($partners);
     }
 
     public function postFormPartner(PartnerRequest $request) {
@@ -238,6 +244,50 @@ public function makeEditArticle(ArticleEditRequest $request,$slug) {
 
       } catch (ArticleException $e) {
         return back()->with("_errors",$e->getMessage());
+      }
+
+    }
+    // make edit partners
+    public function makeEditPartner(Request $request,$slug) {
+      try {
+        $editPartner = Partners::find($slug);
+        if($request->hasFile('logo')) {
+
+        } else {
+          // aucun modification de l'image
+          if($editPartner) {
+            $editPartner->organisation = $request->input('organisation');
+            $editPartner->tag = $request->input('tag');
+            $editPartner->description = $request->input('description');
+            $editPartner->save();
+            return redirect('admin/partners/'.$editPartner->slug.'/edit')->withSuccess("Success");
+          } else {
+            throw new ArticleException("Erreur ! Ressayez");
+          }
+        }
+
+      } catch (ArticleException $e) {
+        return back()->withError($e->getMessage());
+      }
+
+    }
+    // delete partners
+    public function deletePartner($slug) {
+      $partner = Partners::find($slug);
+      try {
+        if($partner) {
+          if(File::delete(config('partner.path').'/'.$partner->logo)) {
+            $partner->delete();
+            return redirect('/admin/partners')->withSuccess("Success!");
+          } else {
+            throw new ArticleException("Erreur ! Ressayez");
+          }
+        } else {
+          throw new ArticleException("Erreur ! Ressayez ");
+        }
+
+      } catch (ArticleException $e) {
+        return back()->withError($e->getMessage());
       }
 
     }

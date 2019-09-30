@@ -56,7 +56,7 @@ Route::get('/admin/voir-aussi','HomeController@VoirIndex');
 Route::get('/admin/articles/{slug}/edit','HomeController@editArticle');
 Route::get('/admin/edit-page/{slug}','HomeController@editPage');
 Route::get('/admin/partners','HomeController@getFormPartner');
-
+Route::get('/admin/partners/{slug}/edit','HomeController@editPartner');
 // All post requests
 Route::post('/admin/edit-page/{slug}','HomeController@makeEditPage');
 Route::post('/admin/post-page','HomeController@postPresentation');
@@ -71,3 +71,5 @@ Route::post('/admin/articles/{slug}/delete','HomeController@deleteArticle');
 
 Route::post('/admin/media/add-video','HomeController@addVideo');
 Route::post('/admin/partner/add','HomeController@postFormPartner');
+Route::post('admin/partners/{slug}/edit','HomeController@makeEditPartner');
+Route::post('/admin/partners/{slug}/delete','HomeController@deletePartner');

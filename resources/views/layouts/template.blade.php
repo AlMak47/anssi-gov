@@ -303,7 +303,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 				<h3>ADMINISTRATION</h3>
 				<ul class="uk-list">
 					@foreach($administration as $key=>$value)
-					<li><a href="{{url('/administration',[$value->slug])}}">{{$value->titre}}</a></li>
+					<li><a href="{{url('/vous-etes/administration',['precautions-elementaires'])}}">{{$value->titre}}</a></li>
 					@endforeach
 				</ul>
 			</div>
@@ -311,7 +311,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 				<h3>ENTREPRISES</h3>
 				<ul class="uk-list">
 					@foreach($administration as $key=>$value)
-					<li><a href="{{url('/entreprise',[$value->slug])}}">{{$value->titre}}</a></li>
+					<li><a href="{{url('/vous-etes/entreprise',['precautions-elementaires'])}}">{{$value->titre}}</a></li>
 					@endforeach
 				</ul>
 			</div>
@@ -319,7 +319,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 				<h3>PARTICULIERS</h3>
 				<ul class="uk-list">
 					@foreach($administration as $key=>$value)
-					<li><a href="{{url('particuliers',[$value->slug])}}">{{$value->titre}}</a></li>
+					<li><a href="{{url('/vous-etes/particulier',['precautions-elementaires'])}}">{{$value->titre}}</a></li>
 					@endforeach
 				</ul>
 			</div>
