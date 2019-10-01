@@ -52,20 +52,11 @@
 				@else
 				<?php
 					 $next = $loop->index+1;
-					 $prev = $loop->index-1;
+					 // $prev = $loop->index-1;
 					?>
 				@endif
 			@endif
 		@endforeach
-
-			@if($prev)
-		    <li>
-		    	<a href=""><span class="uk-margin-small-right" uk-pagination-previous></span> {{str_limit($articles->items()[$prev]->titre,30,'...')}} </a>
-		    </li>
-		    @endif
-		    <li class="uk-margin-auto-left">
-		    	<a href="{{url('/news',['slug'=>$articles->items()[$next]->slug])}}"> {{str_limit($articles->items()[$next]->titre,30,'...')}} <span class="uk-margin-small-left" uk-pagination-next></span>  </a>
-		    </li>
 		</ul>
 	</div>
 	<div class="uk-width-1-5@m uk-visible@l">
