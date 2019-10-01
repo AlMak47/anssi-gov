@@ -57,6 +57,7 @@ Route::get('/admin/articles/{slug}/edit','HomeController@editArticle');
 Route::get('/admin/edit-page/{slug}','HomeController@editPage');
 Route::get('/admin/partners','HomeController@getFormPartner');
 Route::get('/admin/partners/{slug}/edit','HomeController@editPartner');
+Route::get('/admin/settings','HomeController@settings');
 // All post requests
 Route::post('/admin/edit-page/{slug}','HomeController@makeEditPage');
 Route::post('/admin/post-page','HomeController@postPresentation');
@@ -73,3 +74,5 @@ Route::post('/admin/media/add-video','HomeController@addVideo');
 Route::post('/admin/partner/add','HomeController@postFormPartner');
 Route::post('admin/partners/{slug}/edit','HomeController@makeEditPartner');
 Route::post('/admin/partners/{slug}/delete','HomeController@deletePartner');
+// change password Admin
+Route::post('/admin/settings/change-password-admin','HomeController@makeChangePasswordAdmin');

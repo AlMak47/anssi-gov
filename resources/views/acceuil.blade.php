@@ -18,7 +18,7 @@ Agence Nationale de la Securite des Systemes d'Information
     <div class="">
       <!-- administration -->
       <a href="{{url('/vous-etes/administration',['precautions-elementaires'])}}" class="uk-button-default">
-        <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 5rem !important;background : #900">
+        <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 3.9rem !important;background : #900">
           <img src="{{asset('svg-icons/arm.svg')}}" style="color : #fff;" width="100%" class="img-svg"  uk-svg="stroke-animation : true">
         </div>
         <div class="uk-text-lead uk-text-center">
@@ -31,7 +31,7 @@ Agence Nationale de la Securite des Systemes d'Information
       <!-- entreprise -->
 
       <a href="{{url('vous-etes/entreprise',['precautions-elementaires'])}}" class="uk-button-default">
-        <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 5rem !important;background : #959000">
+        <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 4.4rem !important;background : #959000">
           <img src="{{asset('svg-icons/skycraper.svg')}}" style="color: #fff"  width="100%" uk-svg>
         </div>
         <div class="uk-text-lead uk-text-center">
@@ -44,7 +44,7 @@ Agence Nationale de la Securite des Systemes d'Information
     <div class="">
     <!-- particulier -->
     <a href="{{url('vous-etes/particulier',['precautions-elementaires'])}}" class="uk-button-default">
-      <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 5rem !important;background : #090">
+      <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 4.4rem !important;background : #009900">
         <img src="{{asset('svg-icons/home.svg')}}" style="color: #fff"  width="100%" uk-svg>
       </div>
       <div class="uk-text-lead uk-text-center">
@@ -63,15 +63,16 @@ Agence Nationale de la Securite des Systemes d'Information
       	@foreach($banniere as $key => $value)
           <li>
               <img src="{{asset('article/'.$value->image)}}" alt="" uk-cover>
+            <a href="{{url('/news',['slug'=>$value->slug])}}">
               <div class="uk-overlay uk-overlay-default uk-position-bottom-right uk-position-small uk-transition-slide-bottom">
                   <h3 class="uk-margin-remove uk-width-xlarge">{{$value->titre}}</h3>
-                  <!-- <p class="uk-margin-remove">Lorem ipsum dolor sit amet.</p> -->
               </div>
+            </a>
           </li>
           @endforeach
           @endif
       </ul>
-
+        <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
   </div>
 </div>
 </div>

@@ -135,16 +135,15 @@
         <ul class="uk-navbar-nav">
             @if(Auth::check())
             <li>
-                <a href="#">ADMIN <span uk-icon="icon:triangle-down;ratio:.8"></span></a>
+                <a href="#">{{Auth::user()->name}} <span uk-icon="icon:triangle-down;ratio:.8"></span></a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li class="uk-active"><a href="{{url('admin/articles')}}">Articles</a></li>
                         <li><a href="{{url('admin/documents')}}">Documents</a></li>
-                        <!-- <li><a href="{{url('admin/banniere')}}">banniere</a></li> -->
-                        <!-- <li><a href="{{url('admin/medias')}}">Media</a></li> -->
                         <li><a href="{{url('admin/anssi-guinee')}}">ANSSI GUINEE</a></li>
                         <li><a href="{{url('admin/voir-aussi')}}">VOIR AUSSI</a></li>
                         <li><a href="{{url('admin/partners')}}">Partenaires</a></li>
+                        <li><a href="{{url('admin/settings')}}">parametres</a></li>
                         <li>
                             <a href=""  onclick="event.preventDefault();
                                                                  document.getElementById('logout-form').submit();">

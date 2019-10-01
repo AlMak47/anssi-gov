@@ -21,6 +21,10 @@ use App\Article;
 use App\Pages;
 use App\Document;
 use App\Partners;
+use App\User;
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -290,5 +294,33 @@ public function makeEditArticle(ArticleEditRequest $request,$slug) {
         return back()->withError($e->getMessage());
       }
 
+    }
+
+    // home settings to change password admin
+    public function settings() {
+      return view('admin.settings');
+    }
+
+    public function makeChangePasswordAdmin(Request $request) {
+      $validation = $request->validate([
+        'username'  =>  'required|string|exists:users,name',
+        'old_password'  =>  'required|string',
+        'new_password'  =>  'required|string|min:4|confirmed'
+      ]);
+      $user = Auth::user();
+      try {
+        if(Hash::check($request->input('old_password'),$user->password)) {
+          User::where([
+            'name'  =>  $user->name
+          ])->update([
+            'password'  =>  Hash::make($request->input('new_password'))
+          ]);
+          return redirect("admin/settings")->withSuccess("Success!");
+        } else {
+          throw new ArticleException("Erreur ancien mot de passe incorrect");
+        }
+      } catch (ArticleException $e) {
+        return back()->with('_errors',$e->getMessage());
+      }
     }
 }
