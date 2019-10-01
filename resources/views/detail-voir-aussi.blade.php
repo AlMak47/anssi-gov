@@ -22,7 +22,9 @@
 
 			<div class="uk-width-3-5@m">
 				    <h3 class="uk-heading-divider">{{$details->titre}}</h3>
-				    <p>{!!$details->contenu!!}</p>
+				    <div class="uk-text-justify">
+							{!!$details->contenu!!}
+				    </div>
 						@if($details->tag == "administration" && $details->slug == "bonnes-pratiques")
 						<h4 class="uk-heading-divider">Nos Guides</h4>
 						@php

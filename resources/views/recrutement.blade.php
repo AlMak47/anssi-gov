@@ -13,9 +13,9 @@ RECRUTEMENT
 		</ul>
 		<div uk-grid>
 			<div class="uk-width-1-5@m uk-visible@l">
-				<ul class="uk-list uk-list-divider">
+				<!-- <ul class="uk-list uk-list-divider">
 									<li><a class="uk-button-link" style="text-decoration : none !important ;" href="#"> Formulaire de Candidature</a></li>
-				</ul>
+				</ul> -->
 			</div>
 			<div class="uk-width-3-5@m">
 				<div class="uk-heading-divider uk-h3">RECRUTEMENT</div>

@@ -24,9 +24,7 @@
 	<!-- // -->
 	<!-- NAVBAR -->
 <div uk-sticky="animation:uk-animation-slide-top">
-	<!-- support center button -->
-	<!-- <a href="https://support.anssi.gov.gn" target="_blank" class="uk-button uk-button-primary support-center" id="support-center">Support Center</a> -->
-	<!-- // -->
+
 	<!-- responsive menu -->
 	<div class="uk-box-shadow-small uk-hidden@l">
 		<nav class="uk-navbar uk-navbar-container uk-margin-remove uk-padding-remove" style="background : #fff">
@@ -126,7 +124,7 @@
 </nav>
 <nav class="uk-navbar-container uk-padding-small uk-light uk-visible@l" style="background:rgb(0, 116, 180);" uk-navbar>
 	<div class="uk-navbar-left">
-     <span class="uk-text-bold uk-text-large uk-button" style="color :#fff;">
+     <span class="uk-text-bold uk-text-normal uk-button" style="color :#fff;">
 			  <span uk-icon="icon:receiver;ratio:1.5" class="phone-icone"></span> <span class="phone-number" style="text-decoration: none;">+224 627 537 012</span>
 			</span>
     </div>
@@ -158,62 +156,17 @@
                 </div>
             </li>
             @endif
-            <!-- <li class="uk-active"><a href="{{url('/')}}">Acceuil</a></li> -->
+
 						<li class="uk-active"><a href="{{url('anssi-guinee',['slug'=>App\Pages::where('slug','missions-et-attributions')->first()->slug])}}">Anssi Guinee</a></li>
-            <!-- <li class="uk-active">
-                <a href="{{url('anssi-guinee',['slug'=>App\Pages::where('slug','missions-et-attributions')->first()->slug])}}">ANSSI GUINEE <span uk-icon="icon:triangle-down;ratio:.8"></span></a> -->
+
                 <!-- MENU PRESENTATIONS -->
                 <?php  $presentations = App\Pages::where('tag','presentation')->get(); ?>
-
-                    @if($presentations->count() > 0)
-                <!-- <div class="uk-navbar-dropdown">
-                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li class="uk-active"><a href="{{url('/anssi-guinee',['slug'=>App\Pages::where('slug','edito-du-ministre')->first()->slug])}}">{{App\Pages::where('slug','edito-du-ministre')->first()->titre}}</a></li>
-                        <li class="uk-active"><a href="{{url('/anssi-guinee',['slug'=>App\Pages::where('slug','edito-du-dg')->first()->slug])}}">{{App\Pages::where('slug','edito-du-dg')->first()->titre}}</a></li>
-                        <li class="uk-active"><a href="{{url('/anssi-guinee',['slug'=>App\Pages::where('slug','missions-et-attributions')->first()->slug])}}">{{App\Pages::where('slug','missions-et-attributions')->first()->titre}}</a></li>
-                        <li class="uk-active"><a href="{{url('/anssi-guinee',['slug'=>App\Pages::where('slug','cybersecurite-en-guinee')->first()->slug])}}">{{App\Pages::where('slug','cybersecurite-en-guinee')->first()->titre}}</a></li>
-                    </ul>
-                </div> -->
-                    @endif
-            <!-- </li> -->
 						<li class="uk-active"><a href="{{url('/cadre-legal',['documents-strategiques'])}}">Cadre Legal</a></li>
 						<li class="uk-active"><a href="{{url('/outils',['simples-utilisateurs'])}}">Outils</a></li>
-            <!-- <li class="uk-active">
-                <a href="#">Documentation <span uk-icon="icon:triangle-down;ratio:.8"></span></a>
-                <div class="uk-navbar-dropdown">
-                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li class="uk-active"><a href="{{url('documentation',['slug'=>'loi'])}}">Loi</a></li>
-                        <li><a href="{{url('documentation',['slug'=>'decret'])}}">Decrets</a></li>
-                        <li><a href="{{url('documentation',['slug'=>'arrete'])}}">Arrêté</a></li>
-                        <li><a href="{{url('documentation',['slug'=>'decision'])}}">Decision</a></li>
-                        <li><a href="{{url('documentation',['slug'=>'autre'])}}">Autres</a></li>
-                    </ul>
-                </div>
-            </li> -->
             <li class="uk-active"><a href="{{url('/partenariats')}}">Partenariats</a></li>
-            <!-- <li class="uk-active"><a href="{{url('/news')}}">Actualités</a></li> -->
             <li class="uk-active"><a href="{{url('/documents-et-formations',['documentation'])}}">Documents et Formations</a></li>
             <li class="uk-active"><a href="{{url('/contact-us/')}}">Contact</a></li>
-            <!-- <li class="uk-active">
-                <a href="#">Mediatheque <span uk-icon="icon:triangle-down;ratio:.8"></span></a>
-                <div class="uk-navbar-dropdown">
-                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li class="uk-active"><a href="#">Publication</a></li>
-                        <li><a href="#">Photo</a></li>
-                        <li><a href="#">Video</a></li>
-                    </ul>
-                </div>
-            </li> -->
-            <!-- <li class="uk-active">
-                <a href="#">Contact <span uk-icon="icon:triangle-down;ratio:.8"></span></a>
-                <div class="uk-navbar-dropdown">
-                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li class="uk-active"><a href="#">SiteMap</a></li>
-                        <li><a href="{{url('/recrutement/')}}">Recrutement</a></li>
-                        <li><a href="{{url('contact-us')}}">Contactez Nous</a></li>
-                    </ul>
-                </div>
-            </li> -->
+
         </ul>
 
     </div>
@@ -329,7 +282,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 				@endphp
 				<ul class="uk-list">
 					@foreach($partners as $key=>$value)
-					<li><a href="">{{$value->organisation}}</a></li>
+					<li><a>{{$value->organisation}}</a></li>
 					@endforeach
 			</div>
 		</div>

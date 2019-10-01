@@ -9,7 +9,7 @@ Nos Partenaires
 	<div class="uk-container uk-container-large">
 		<ul class="uk-breadcrumb">
 		    <li><a href="{{url('/')}}"><span uk-icon="icon:home;ratio:.6"></span> Acceuil</a></li>
-		    <li><span>Formation</span></li>
+		    <li><span>Nos Partenairesa</span></li>
 		</ul>
 		<div uk-grid>
 			<div class="uk-width-1-5@m uk-visible@l">
