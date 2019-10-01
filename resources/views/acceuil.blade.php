@@ -18,8 +18,8 @@ Agence Nationale de la Securite des Systemes d'Information
     <div class="">
       <!-- administration -->
       <a href="{{url('/vous-etes/administration',['precautions-elementaires'])}}" class="uk-button-default">
-        <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 3.9rem !important;background : #900">
-          <img src="{{asset('svg-icons/arm.svg')}}" style="color : #fff;" width="100%" class="img-svg"  uk-svg="stroke-animation : true">
+        <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 4.4rem !important;background : #900">
+          <img src="{{asset('svg-icons/city-hall.svg')}}" style="color : #fff;" width="100%" class="img-svg"  uk-svg="stroke-animation : true">
         </div>
         <div class="uk-text-lead uk-text-center">
           Administration
