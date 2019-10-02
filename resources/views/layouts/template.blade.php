@@ -18,12 +18,23 @@
 	</style>
 </head>
 <body>
+	<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '2005235842908607',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v4.0'
+    });
+  };
+</script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 	<!-- facebook plugin -->
 	<div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v4.0&appId=2005235842908607&autoLogAppEvents=1"></script>
 	<!-- // -->
 	<!-- NAVBAR -->
-<div uk-sticky="animation:uk-animation-slide-top">
+<div uk-sticky="animation:uk-animation-slide-top" class="all-nav">
 
 	<!-- responsive menu -->
 	<div class="uk-box-shadow-small uk-hidden@l">
@@ -100,7 +111,7 @@
 	<!-- // -->
 	<!-- // -->
 <nav class="uk-navbar-container uk-navbar uk-visible@l" style="background : #fff" uk-navbar>
-    <div class="uk-navbar-left uk-margin-xlarge-left" style="padding : 20px;" id="logo-box">
+    <div class="uk-navbar-left uk-margin-small-left" style="padding : 20px;" id="logo-box">
 	    <a href="{{url('/')}}" class="uk-navbar-item uk-logo">
             <img src="{{asset('image/logo.png')}}" class="uk-margin-remove logo" uk-img>
             <div class="sigle"><div>ANSSI</div><div class="sigle-mini">GUINEE</div></div>
@@ -115,9 +126,9 @@
 <?php $voir = App\Pages::where('tag','voir_aussi')->orderBy('created_at','asc')->get(); ?>
 	@if($voir)
     @foreach($voir as $key => $value)
-            <li><a href="{{url('/voir-aussi',['slug'=>$value->slug])}}" class="uk-button-link uk-text-lighterx">{{$value->titre}}</a></li>
+            <li><a href="{{url('/voir-aussi',['slug'=>$value->slug])}}" class="uk-button-link uk-button">{{$value->titre}}</a></li>
     @endforeach
-		<li><a href="{{url('/recrutement')}}" class="uk-button-link uk-text-lighter">Recrutement</a> </li>
+		<!-- <li><a href="{{url('/recrutement')}}" class="uk-button-link uk-text-lighter">Recrutement</a> </li> -->
     @endif
     	</ul>
     </div>
@@ -205,7 +216,7 @@
 @php
 $administration = App\Pages::where('tag','administration')->orderBy('created_at','desc')->get();
 @endphp
-<div class="uk-section uk-section-secondary uk-padding-small uk-margin-top" style="background: rgb(0, 116, 180);">
+<div class="uk-section uk-section-secondary uk-padding-small uk-margin-top-large" style="background: rgb(0, 116, 180);">
 	<div class="uk-container">
 		<!-- responsive footer -->
 		@if($administration)
@@ -289,6 +300,10 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 		@endif
 	</div>
 </div>
+<!-- messenger -->
+
+<!-- // -->
+<a href="#" style="display:none;" class="uk-button-secondary uk-border-rounded uk-padding-small to-top" uk-totop uk-scroll></a>
 <div class="uk-text-center copy uk-padding-remove uk-visible@l">&copy; ANSSI GUINEE {{date('Y')}} | Developp&eacute; par <a href="https://www.smartechguinee.com" target="_blank">Smartech</a></div>
 <div class="uk-text-center copy uk-margin-xlarge-bottom uk-padding-remove uk-hidden@l">&copy; ANSSI GUINEE {{date('Y')}}</div>
 
@@ -324,54 +339,54 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 
         $(window).scroll(function (){
             if($(this).scrollTop() >= 40) {
-
+								$(".all-nav").addClass("uk-box-shadow-large");
                 $(".logo").animate({
                     'width':'40px'
-                },0,'linear');
+                },0,800);
 
                 $(".denom").animate({
                     'width' : '260px',
                     'font-size' : '1.rem'
-                },0),'linear';
+                },0),800;
 
                 $(".sigle").animate({
                     'font-size':'1.6rem',
                     'width' : '80px'
-                },0,'linear');
+                },0,800);
 
                 $('.sigle-mini').animate({
                     'font-size' : '0.5rem',
                     'letter-spacing': '8px'
-                },0,'linear');
+                },0,800);
 
                 $("#logo-box").animate({
                     'padding' : '0px'
-                },{duration : 10,queue :false},'linear');
+                },{duration : 100,queue :false});
 
             } else {
-
+								$(".all-nav").removeClass('uk-box-shadow-large');
                 $(".logo").animate({
                     'width':'80px'
-                },0,'linear');
+                },0,800);
 
                  $(".denom").animate({
                     'width' : '230px',
                     'font-size' : '1rem'
-                },0,'linear');
+                },0,800);
 
                 $(".sigle").animate({
                     'font-size':'2.5rem',
                     'width' : '120px'
-                },0,'linear');
+                },0,800);
 
                 $('.sigle-mini').animate({
                     'font-size' : '1rem',
                     'letter-spacing': '10px'
-                },0,'linear');
+                },0,800);
 
                 $("#logo-box").animate({
                     'padding' : '20px'
-                },{duration : 10,queue :false},'linear');
+                },{duration : 100,queue :true},'linear');
             }
         });
 
@@ -379,9 +394,11 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 					if($(this).scrollTop() > 200) {
 						$("#right-menu").addClass('right-menu test');
 						$("#left-menu").addClass('right-menu test');
+						$(".to-top").show(300);
 					} else {
 						$("#right-menu").removeClass('right-menu test');
 						$("#left-menu").removeClass('right-menu test');
+						$(".to-top").hide(300);
 					}
 				});
     });

@@ -113,7 +113,8 @@ class HomeController extends Controller
     }
     // @####
     public function documentIndex() {
-        return view('admin.document');
+      $docs = Document::all();
+        return view('admin.document')->withDocs($docs);
     }
 
     public function mediaIndex() {

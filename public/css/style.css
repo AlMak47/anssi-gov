@@ -126,10 +126,20 @@
 .right-menu {
   /* border :solid 1px black; */
   position : fixed;
-  margin-bottom : 200px;
-
 }
 .test {
+  /* top : 25%; */
   top : 25%;
-  width : 15%;
+  width : 17%;
+  margin-bottom : 300px !important;
+}
+.to-top {
+  position : fixed;
+  z-index: 1;
+  bottom : 0;
+  margin-right : 2%;
+  margin-bottom : 2%;
+  right : 0;
+  background : rgba(0,0,0,0.6);
+  color : :#fff;
 }

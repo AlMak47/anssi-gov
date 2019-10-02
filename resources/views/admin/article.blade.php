@@ -41,17 +41,17 @@ ADMIN-ARTICLE
 		        	{!!Form::close()!!}
 		        </div>
 		    </li>
-		    <li>
+		    <li class="uk-open">
 		        <a class="uk-accordion-title" href="#">TOUS LES ARTICLES</a>
 		        <div class="uk-accordion-content">
-		        	<ul class="uk-list">
+		        	<ul class="uk-list uk-list-striped">
 		        	@foreach($articles as $key => $values)
 		        		<li>
 		        			<a class="uk-button uk-button-link" href="">{{str_limit($values->titre,100)}}</a>
 		        			<span class="uk-align-right">
-				        		 <a href="{{url('/admin/articles',[$values->slug,'edit'])}}" class="uk-alert-primary" uk-icon="icon:pencil;ratio:.8">edit</a>
+				        		 <a href="{{url('/admin/articles',[$values->slug,'edit'])}}" class="uk-button-primary" uk-icon="icon:pencil;ratio:.8">edit</a>
 										 {!!Form::open(['url'=>'/admin/articles/'.$values->slug.'/delete'])!!}
-				        		 <button type="submit" class="uk-alert-danger" uk-icon="icon:trash;ratio:.8">delete</button>
+				        		 <button type="submit" class="uk-button-danger" uk-icon="icon:trash;ratio:.8">delete</button>
 										 {!!Form::close()!!}
 		        			</span>
 		        		</li>

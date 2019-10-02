@@ -7,49 +7,49 @@ Agence Nationale de la Securite des Systemes d'Information
 @section('content')
 <!-- BANNIERE -->
 <div class="uk-child-width-1-2@m" uk-grid>
-<div class="uk-background-default" style="padding-top : 1rem">
+<div class="uk-background-cover" style="padding-top : 1rem;background-image : url('image/guinee.jpg');">
   <!-- first column -->
-  <div class="uk-heading uk-text-center uk-h4" style="background : url(asset('image/guinee.jpg'))">
+  <div class="uk-heading uk-margin-top uk-text-center uk-h4">
     VOUS ETES UN(E)
   </div>
-  <hr class="uk-divider-small uk-margin-small uk-text-center">
-  <div class="uk-padding uk-margin-right uk-child-width-1-3@m" uk-grid>
+  <hr class="uk-divider-small uk-text-center">
+  <div class="uk-padding uk-margin-small-left uk-child-width-1-3@m" uk-grid>
     <!--  -->
     <div class="">
       <!-- administration -->
-      <a href="{{url('/vous-etes/administration',['precautions-elementaires'])}}" class="uk-button-default">
-        <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 4.4rem !important;background : #900">
+      <a href="{{url('/vous-etes/administration',['precautions-elementaires'])}}" class="">
+        <div class="uk-padding uk-border-rounded uk-overlay uk-overlay-primary uk-margin-left" style="width : 4.4rem !important;background :darkred">
           <img src="{{asset('svg-icons/city-hall.svg')}}" style="color : #fff;" width="100%" class="img-svg"  uk-svg="stroke-animation : true">
         </div>
         <div class="uk-text-lead uk-text-center">
           Administration
-          <hr class="uk-divider-small">
+          <!-- <hr class="uk-divider-small"> -->
         </div>
       </a>
     </div>
     <div class="">
       <!-- entreprise -->
 
-      <a href="{{url('vous-etes/entreprise',['precautions-elementaires'])}}" class="uk-button-default">
-        <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 4.4rem !important;background : #959000">
+      <a href="{{url('vous-etes/entreprise',['precautions-elementaires'])}}" class="">
+        <div class="uk-padding uk-border-rounded uk-overlay uk-overlay-primary uk-margin-left" style="width : 4.4rem !important;background : #999900">
           <img src="{{asset('svg-icons/skycraper.svg')}}" style="color: #fff"  width="100%" uk-svg>
         </div>
         <div class="uk-text-lead uk-text-center">
           Entreprise
-          <hr class="uk-divider-small">
+          <!-- <hr class="uk-divider-small"> -->
         </div>
       </a>
 
     </div>
     <div class="">
     <!-- particulier -->
-    <a href="{{url('vous-etes/particulier',['precautions-elementaires'])}}" class="uk-button-default">
-      <div class="uk-padding uk-border-circle uk-overlay uk-overlay-primary uk-margin-left" style="width : 4.4rem !important;background : #009900">
+    <a href="{{url('vous-etes/particulier',['precautions-elementaires'])}}" class="">
+      <div class="uk-padding uk-border-rounded uk-overlay uk-overlay-primary uk-margin-left" style="width : 4.4rem !important;background : #099900">
         <img src="{{asset('svg-icons/home.svg')}}" style="color: #fff"  width="100%" uk-svg>
       </div>
       <div class="uk-text-lead uk-text-center">
         Particulier
-        <hr class="uk-divider-small">
+        <!-- <hr class="uk-divider-small"> -->
       </div>
     </a>
     </div>
@@ -111,7 +111,9 @@ Agence Nationale de la Securite des Systemes d'Information
 			</div>
 		<!-- BULLETIN D'ACTUALITES -->
 			<div class="uk-width-3-5@m">
-				<h3 class="uk-heading-divider"><a class="uk-button-text" href="{{url('/news')}}" style="text-decoration : none;">Actualites</a></h3>
+				<h3 class="uk-heading-divider uk-margin-top"><a class="uk-button-text" href="{{url('/news')}}" style="text-decoration : none;">Actualites</a></h3>
+
+        
 				@if($articles)
 				@foreach($articles as $key => $values)
 				<article class="uk-article">
@@ -135,7 +137,7 @@ Agence Nationale de la Securite des Systemes d'Information
 				@endif
 		<!-- // -->
 			</div>
-      <div class="uk-width-1-5@m">
+      <div class="uk-width-1-5@m uk-margin-top">
 				<div class="" id="right-menu">
 					<div class='uk-border-rounded panel-right uk-box-shadow-small'>
 						<div class='uk-card-title uk-heading-divider uk-text-center panel-right-header uk-border-rounded uk-padding-remove'><a class="uk-button uk-text-bold" style="text-decoration :none;color:#fff" href="{{url('/voir-aussi',[App\Pages::where('slug','en-cas-dincidence')->first()->slug])}}">En cas d'incident</a></div>
@@ -147,7 +149,7 @@ Agence Nationale de la Securite des Systemes d'Information
 								<a href="https://support.anssi.gov.gn" class="uk-button-link">Cellule d'alerte</a>
 							</li>
 							<li class="uk-text-center">
-								<a href="{{url('/recrutement')}}" class="uk-button-link">Recrutement</a>
+								<a href="{{url('voir-aussi/recrutement')}}" class="uk-button-link">Recrutement</a>
 							</li>
 						</ul>
 					</div>

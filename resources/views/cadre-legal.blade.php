@@ -51,8 +51,8 @@ Cadre Legal
 				<!-- // -->
 				@endif
 			</div>
-			<div class="uk-width-1-5@m">
-				<div class="" id="left-menu">
+			<div class="uk-width-1-5@m uk-position-z-index">
+				<div class="" id="left-menu" class="test">
 					<div class='uk-border-rounded panel-right uk-box-shadow-small'>
 						<div class='uk-card-title uk-heading-divider uk-text-center panel-right-header uk-border-rounded uk-padding-remove'><a class="uk-button uk-text-bold" style="text-decoration :none;color:#fff" href="{{url('/voir-aussi',[App\Pages::where('slug','en-cas-dincidence')->first()->slug])}}">En cas d'incident</a></div>
 						<ul class="uk-list uk-list-divider">
@@ -63,7 +63,7 @@ Cadre Legal
 								<a href="https://support.anssi.gov.gn" class="uk-button-link">Cellule d'alerte</a>
 							</li>
 							<li class="uk-text-center">
-								<a href="{{url('/recrutement')}}" class="uk-button-link">Recrutement</a>
+								<a href="{{url('voir-aussi/recrutement')}}" class="uk-button-link">Recrutement</a>
 							</li>
 						</ul>
 					</div>

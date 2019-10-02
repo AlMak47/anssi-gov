@@ -71,7 +71,7 @@ Outils
 								<a href="https://support.anssi.gov.gn" target="_blank" class="uk-button-link">Cellule d'alerte</a>
 							</li>
 							<li class="uk-text-center">
-								<a href="/recrutement" class="uk-button-link">Recrutement</a>
+								<a href="voir-aussi/recrutement" class="uk-button-link">Recrutement</a>
 							</li>
 						</ul>
 					</div>

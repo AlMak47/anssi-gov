@@ -29,8 +29,9 @@ class ContactController extends Controller
       ]);
       // dd($request);
 
-      Mail::to("test-6fb65e@inbox.mailtrap.io")
+      Mail::to("almamy@smartechguinee.com")
         ->send(new Contact($request->except("_token")));
+
         return redirect('/contact-us')->withSuccess("Success!");
     }
 }

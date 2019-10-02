@@ -33,7 +33,7 @@ class Contact extends Mailable
     public function build()
     {
 
-        return $this->from("bangourayans47@gmail.com")
+        return $this->from("yansaneal47@gmail.com")
           ->view('emails.contact');
     }
 }

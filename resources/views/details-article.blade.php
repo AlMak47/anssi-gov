@@ -34,7 +34,7 @@
 		    </p>
 		    <img src="{{asset('article/'.$details->image)}}" width="" height="">
 		    <p class="uk-text-justify">{!!$details->contenu!!}</p>
-
+				<div class="fb-comments" data-href="{{url()->current()}}" data-width="auto" data-numposts="10"></div>
 		</article>
 		<ul class="uk-pagination">
 		@foreach($articles as $key => $values)

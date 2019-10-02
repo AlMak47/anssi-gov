@@ -12,15 +12,15 @@ ADMIN-VOIR AUSSI
 		<hr class="uk-divider-small">
 
 		<ul uk-accordion="multiple : true">
-		    <!-- <li class="uk-open">
+		    <li class="uk-open">
 		        <a class="uk-accordion-title" href="#">NOUVEAU VOLET</a>
 		        <div class="uk-accordion-content">
 		        	@if(session('success'))
 		        	<div class="uk-alert uk-alert-success">
 		        		<div>{{session('success')}}</div>
 		        	</div>
-		        	@endif -->
-		        	<!-- {!!Form::open(['url'=>'/admin/post-page','id'=>'_form'])!!}
+		        	@endif
+		        	{!!Form::open(['url'=>'/admin/post-page','id'=>'_form'])!!}
 		        	{!!Form::text('titre','',['class'=>'uk-input uk-margin-small','placeholder'=>'TITRE'])!!}
 							{!!Form::select('tag',[
 							'cadre_legal'	=>	'Cadre Legal',
@@ -28,20 +28,20 @@ ADMIN-VOIR AUSSI
 							'doc_form'	=>	'Documents et Formations',
 							'administration'=>'Administration',
 							'voir_aussi'=>'Voir Aussi'
-							],null,['placeholder'=>'Tag','class'=>'uk-select uk-margin-small'])!!} -->
+							],null,['placeholder'=>'Tag','class'=>'uk-select uk-margin-small'])!!}
 		        	<!-- Create the editor container -->
-		        	<!-- <input type="hidden" name="contenu" id="contenu"/>
-							<div id="editor-container" style="height: 300px"></div> -->
-		        	<!-- <input type="hidden" name="tag" value="voir_aussi"> -->
+		        	 <input type="hidden" name="contenu" id="contenu"/>
+							<div id="editor-container" style="height: 300px"></div>
+		        	 <input type="hidden" name="tag" value="voir_aussi">
 		        	<!-- // -->
-		        	<!-- {!!Form::submit('submit',['class'=>'uk-button uk-button-default uk-margin-small'])!!}
+		        	 {!!Form::submit('submit',['class'=>'uk-button uk-button-default uk-margin-small'])!!}
 		        	{!!Form::close()!!}
 		        </div>
-		    </li> -->
+		    </li>
 		    <li class="uk-open">
 		        <a class="uk-accordion-title" href="#">TOUS LES VOLETS</a>
 		        <div class="uk-accordion-content">
-		        	<ul class="uk-list">
+		        	<ul class="uk-list uk-list-striped">
 		        	@foreach($voir as $key => $values)
 		        		<li><a class="uk-button uk-button-link" href="">{{str_limit($values->titre,100)}}</a>
 		        			<span class="uk-align-right">

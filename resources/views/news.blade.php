@@ -41,9 +41,6 @@ Actualites
 						        <div>
 						            <a class="uk-button uk-button-text" href="{{url('/news',['slug'=>$values->slug])}}">En savoir plus</a>
 						        </div>
-						        <!-- <div>
-						            <a class="uk-button uk-button-text" href="#">5 Comments</a>
-						        </div> -->
 						    </div>
 
 						</article>

@@ -51,7 +51,7 @@
 								<a href="https://support.anssi.gov.gn" target="_blank" class="uk-button-link">Cellule d'alerte</a>
 							</li>
 							<li class="uk-text-center">
-								<a href="{{url('/recrutement')}}" class="uk-button-link">Recrutement</a>
+								<a href="{{url('voir-aussi/recrutement')}}" class="uk-button-link">Recrutement</a>
 							</li>
 						</ul>
 					</div>

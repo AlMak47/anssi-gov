@@ -34,11 +34,11 @@ ADMIN-PRESENTATION
 		    <li class="uk-open">
 		        <a class="uk-accordion-title" href="#">TOUS LES VOLETS</a>
 		        <div class="uk-accordion-content">
-		        	<ul class="uk-list">
+		        	<ul class="uk-list uk-list-striped">
 		        	@foreach($presentations as $key => $values)
 		        		<li><a class="uk-button uk-button-link" href="">{{str_limit($values->titre,100)}}</a>
 		        			<span class="uk-align-right">
-			        		 <a href="{{url('admin/edit-page',['slug'=>$values->slug])}}" class="uk-alert-primary" uk-icon="icon:pencil;ratio:.8">edit</a>
+			        		 <a href="{{url('admin/edit-page',['slug'=>$values->slug])}}" class="uk-button-primary" uk-icon="icon:pencil;ratio:.8">edit</a>
 			        		 <!-- <a href="" class="uk-alert-danger" uk-icon="icon:trash;ratio:.8">delete</a> -->
 		        			</span>
 		        		</li>

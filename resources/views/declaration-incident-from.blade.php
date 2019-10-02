@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-Declaration d'incidence
+Declaration d'incident
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@ Declaration d'incidence
 	<div class="uk-container uk-container-large">
 		<ul class="uk-breadcrumb">
 		    <li><a href="{{url('/')}}"><span uk-icon="icon:home;ratio:.6"></span> Acceuil</a></li>
-		    <li><span>Formation</span></li>
+		    <li><span>Declaration d'incident</span></li>
 		</ul>
 		<div uk-grid>
 			<div class="uk-width-1-5@m uk-visible@l">
@@ -17,7 +17,7 @@ Declaration d'incidence
 			</div>
 			<div class="uk-width-3-5@m">
 				<div class="uk-heading-divider uk-h3">DECLARATION D'INCIDENT</div>
-				{!!Form::open(['url'=>'#'])!!}
+				{!!Form::open(['url'=>''])!!}
 				<div class="uk-heading-divider uk-h3">Informations Generales</div>
 				<div class="" uk-grid>
 					<div class="uk-width-1-3@m">
@@ -130,6 +130,41 @@ Declaration d'incidence
 					{!!Form::textarea('description_impacts','',['class'=>'uk-textarea uk-margin-small'])!!}
 				</div>
 				<div class="uk-heading-divider uk-h3">Traitement de l'incident</div>
+				<div class="">
+					{!!Form::label("En cas d'incident d'origine non malveillante , description des causes de l'incident")!!}
+					{!!Form::textarea('incident_origine_non_malveillant','',['class'=>'uk-textarea uk-margin-small'])!!}
+				</div>
+
+				<div class="">
+					{!!Form::label("En cas d'incident d'origine malveillante  ( ou attaque ) , description du mode operatoire et des caracteristiques de l'attaque : ")!!}
+					{!!Form::textarea('incident_origine_malveillant','',['class'=>'uk-textarea uk-margin-small'])!!}
+				</div>
+
+				<div class="">
+					{!!Form::label("En cas d'attaque donner les informations techniques de l'attaque (adresses IP , noms de domaine , adresses URL , e-mail , noms de fichiers ou de codes malveillants , etc: ")!!}
+					{!!Form::textarea('en_cas_attaque_malveillant','',['class'=>'uk-textarea uk-margin-small'])!!}
+				</div>
+
+				<div class="">
+					{!!Form::label("Quelles sont les mesures techniques et organisationnelles prises et envisagees par l'entite pour traiter l'incident")!!}
+					{!!Form::textarea('mesures_technique_organisationnelle','',['class'=>'uk-textarea uk-margin-small'])!!}
+				</div>
+
+				<div class="">
+					{!!Form::label("Si l'entite recourt a des prestataires exterieurs pour traiter l'incident  , liste de ces partenaires ")!!}
+					{!!Form::textarea('list_partenaire','',['class'=>'uk-textarea uk-margin-small'])!!}
+				</div>
+				<div class="uk-heading-divider uk-h3">Divers</div>
+				<div class="">
+					{!!Form::label("Si des declarations relatives a cet incident  ont ete effectuees par l'entite aupres d'autres  organismes (police , gendarmerie,cert)")!!}
+					{!!Form::textarea('declaration_relatives_incident','',['class'=>'uk-textarea uk-margin-small'])!!}
+				</div>
+
+				<div class="">
+					{!!Form::label("En particulier , si un depot de plainte a ete effectue par l'entite, service aupres duquel la plainte est deposee")!!}
+					{!!Form::textarea('depot_plainte_entite','',['class'=>'uk-textarea uk-margin-small'])!!}
+				</div>
+
 				{!!Form::submit('Envoyer',['class'=>'uk-button uk-margin-small form-button uk-light','disabled'=>''])!!}
 				{!!Form::close()!!}
 			</div>
@@ -145,7 +180,7 @@ Declaration d'incidence
 								<a href="https://support.anssi.gov.gn" class="uk-button-link">Cellule d'alerte</a>
 							</li>
 							<li class="uk-text-center">
-								<a href="#" class="uk-button-link">Recrutement</a>
+								<a href="{{url('/voir-aussi/recrutement')}}" class="uk-button-link">Recrutement</a>
 							</li>
 						</ul>
 					</div>
