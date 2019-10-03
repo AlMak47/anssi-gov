@@ -7,13 +7,52 @@ Agence Nationale de la Securite des Systemes d'Information
 @section('content')
 <!-- BANNIERE -->
 <div class="uk-child-width-1-2@m" uk-grid>
-<div class="uk-background-cover" style="padding-top : 1rem;background-image : url('image/guinee.jpg');">
+<div class="" style="padding-top : 1rem;">
   <!-- first column -->
   <div class="uk-heading uk-margin-top uk-text-center uk-h4">
     VOUS ETES UN(E)
   </div>
   <hr class="uk-divider-small uk-text-center">
-  <div class="uk-padding uk-margin-small-left uk-child-width-1-3@m" uk-grid>
+  <!-- responsive -->
+  <div class="uk-padding-remove uk-child-width-1-1@s uk-child-1-1@m uk-hidden@l" uk-grid>
+    <div class="">
+      <ul class="uk-iconnav uk-iconnav-vertical uk-list-divider uk-nav-default uk-nav-parent-icon" uk-nav>
+        <li class="uk-text-justify uk-margin-remove uk-parent"><a href="#" class="uk-button uk-padding-remove"><span class="uk-margin-right uk-icon uk-icon-image" style="background-image: url('svg-icons/city-hall.svg');"></span> <span>Administration</span>  </a>
+          <ul class="uk-nav-sub uk-text-center">
+            <?php  $presentations = App\Pages::where('tag','presentation')->get(); ?>
+						@if($presentations->count() > 0)
+            <li><a href="{{url('/vous-etes',['administration','slug'=>App\Pages::where('slug','precautions-elementaires')->first()->slug])}}"><span uk-icon="icon : arrow-right"></span> {{App\Pages::where('slug','precautions-elementaires')->first()->titre}}</a></li>
+            <li><a href="{{url('/vous-etes',['administration','slug'=>App\Pages::where('slug','principales-menaces')->first()->slug])}}"><span uk-icon="icon : arrow-right"></span> {{App\Pages::where('slug','principales-menaces')->first()->titre}}</a></li>
+            <li><a href="{{url('/vous-etes',['administration','slug'=>App\Pages::where('slug','bonne-pratiques')->first()->slug])}}"><span uk-icon="icon : arrow-right"></span> {{App\Pages::where('slug','bonne-pratiques')->first()->titre}}</a></li>
+            @endif
+          </ul>
+        </li>
+        <li class="uk-text-justify uk-margin-remove uk-parent"><a href="#" class="uk-button uk-padding-remove"><span class="uk-margin-right uk-icon uk-icon-image" style="background-image: url('svg-icons/skycraper.svg');"></span> <span>Entreprise</span>  </a>
+          <ul class="uk-nav-sub uk-text-center">
+            <?php  $presentations = App\Pages::where('tag','presentation')->get(); ?>
+						@if($presentations->count() > 0)
+            <li><a href="{{url('/vous-etes',['entreprise','slug'=>App\Pages::where('slug','precautions-elementaires')->first()->slug])}}"><span uk-icon="icon : arrow-right"></span> {{App\Pages::where('slug','precautions-elementaires')->first()->titre}}</a></li>
+            <li><a href="{{url('/vous-etes',['entreprise','slug'=>App\Pages::where('slug','principales-menaces')->first()->slug])}}"><span uk-icon="icon : arrow-right"></span> {{App\Pages::where('slug','principales-menaces')->first()->titre}}</a></li>
+            <li><a href="{{url('/vous-etes',['entreprise','slug'=>App\Pages::where('slug','bonne-pratiques')->first()->slug])}}"><span uk-icon="icon : arrow-right"></span> {{App\Pages::where('slug','bonne-pratiques')->first()->titre}}</a></li>
+            @endif
+          </ul>
+        </li>
+        <li class="uk-text-justify uk-margin-remove uk-parent"><a href="#" class="uk-button uk-padding-remove"><span class="uk-margin-right uk-icon uk-icon-image" style="background-image: url('svg-icons/home.svg');"></span> <span>Particulier</span>  </a>
+          <ul class="uk-nav-sub uk-text-center">
+            <?php  $presentations = App\Pages::where('tag','presentation')->get(); ?>
+						@if($presentations->count() > 0)
+            <li><a href="{{url('/vous-etes',['particulier','slug'=>App\Pages::where('slug','precautions-elementaires')->first()->slug])}}"><span uk-icon="icon : arrow-right"></span> {{App\Pages::where('slug','precautions-elementaires')->first()->titre}}</a></li>
+            <li><a href="{{url('/vous-etes',['particulier','slug'=>App\Pages::where('slug','principales-menaces')->first()->slug])}}"><span uk-icon="icon : arrow-right"></span> {{App\Pages::where('slug','principales-menaces')->first()->titre}}</a></li>
+            <li><a href="{{url('/vous-etes',['particulier','slug'=>App\Pages::where('slug','bonne-pratiques')->first()->slug])}}"><span uk-icon="icon : arrow-right"></span> {{App\Pages::where('slug','bonne-pratiques')->first()->titre}}</a></li>
+            @endif
+          </ul>
+        </li>
+    </ul>
+    </div>
+  </div>
+  
+  <!-- // -->
+  <div class="uk-padding uk-margin-small-left uk-child-width-1-3@m uk-visible@l" uk-grid>
     <!--  -->
     <div class="">
       <!-- administration -->
@@ -53,6 +92,7 @@ Agence Nationale de la Securite des Systemes d'Information
       </div>
     </a>
     </div>
+    <!--  -->
   </div>
 </div>
 <div class="uk-padding-remove">
@@ -113,7 +153,7 @@ Agence Nationale de la Securite des Systemes d'Information
 			<div class="uk-width-3-5@m">
 				<h3 class="uk-heading-divider uk-margin-top"><a class="uk-button-text" href="{{url('/news')}}" style="text-decoration : none;">Actualites</a></h3>
 
-        
+
 				@if($articles)
 				@foreach($articles as $key => $values)
 				<article class="uk-article">
