@@ -43,7 +43,30 @@
 	<div id="responsive-menu" uk-offcanvas="overlay: true;mode : reveal ">
     <div class="uk-offcanvas-bar uk-flex uk-flex-column" style="background:rgba(0, 16, 10,1) !important;">
 			<ul class="uk-nav uk-nav-default uk-text-lighter uk-nav-parent-icon" uk-nav>
-				<!-- <li class="uk-active"><a href="{{url('/')}}">Acceuil</a></li> -->
+				@if(Auth::check())
+					<li class="uk-parent">
+							<a href="#">{{Auth::user()->name}}</a>
+
+							<ul class="uk-nav-sub">
+								<li class="uk-active"><a href="{{url('admin/articles')}}">Articles</a></li>
+								<li><a href="{{url('admin/documents')}}">Documents</a></li>
+								<li><a href="{{url('admin/anssi-guinee')}}">ANSSI GUINEE</a></li>
+								<li><a href="{{url('admin/voir-aussi')}}">VOIR AUSSI</a></li>
+								<li><a href="{{url('admin/partners')}}">Partenaires</a></li>
+								<li><a href="{{url('admin/settings')}}">parametres</a></li>
+								<li>
+										<a href=""  onclick="event.preventDefault();
+																												 document.getElementById('logout-form').submit();">
+																						{{ __('Logout') }} <span uk-icon="icon:sign-out;ratio:.8"> </span>
+										 </a>
+												<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+																@csrf
+												</form>
+
+								</li>
+							</ul>
+					</li>
+					@endif
 					<li class="uk-parent">
 							<a href="#">Anssi Guinee</a>
 							<ul class="uk-nav-sub">
