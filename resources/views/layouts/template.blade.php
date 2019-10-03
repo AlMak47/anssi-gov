@@ -213,7 +213,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 	        <div class="uk-accordion-content">
 	            <ul class="uk-list">
 								@foreach($administration as $key=>$value)
-								<li><a href="{{url('voir-aussi/administration',[$value->slug])}}">{{$value->titre}}</a></li>
+								<li><a href="{{url('vous-etes/administration',[$value->slug])}}">{{$value->titre}}</a></li>
 								@endforeach
 	            </ul>
 	        </div>
@@ -223,7 +223,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 	        <div class="uk-accordion-content">
 	            <ul class="uk-list">
 								@foreach($administration as $key=>$value)
-								<li><a href="{{url('voir-aussi/entreprise',[$value->slug])}}">{{$value->titre}}</a></li>
+								<li><a href="{{url('vous-etes/entreprise',[$value->slug])}}">{{$value->titre}}</a></li>
 								@endforeach
 	            </ul>
 	        </div>
@@ -233,7 +233,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 	        <div class="uk-accordion-content">
 	            <ul class="uk-list">
 								@foreach($administration as $key=>$value)
-								<li><a href="{{url('voir-aussi/particulier',[$value->slug])}}">{{$value->titre}}</a></li>
+								<li><a href="{{url('vous-etes/particulier',[$value->slug])}}">{{$value->titre}}</a></li>
 								@endforeach
 	            </ul>
 	        </div>
@@ -241,7 +241,14 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 	    <li class="">
 	        <a class="uk-accordion-title" href="#">PARTENAIRES</a>
 	        <div class="uk-accordion-content">
-
+						@php
+						$partners =App\Partners::all();
+						@endphp
+						<ul class="uk-list">
+							@foreach($partners as $key=>$value)
+							<li><a>{{$value->organisation}}</a></li>
+							@endforeach
+						</ul>
 	        </div>
 	    </li>
 		</ul>
@@ -282,6 +289,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 					@foreach($partners as $key=>$value)
 					<li><a>{{$value->organisation}}</a></li>
 					@endforeach
+				</ul>
 			</div>
 		</div>
 		@endif
