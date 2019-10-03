@@ -48,7 +48,7 @@ Cadre Legal
 				    </div>
 				</div>
 				<div class=" uk-button-group uk-width-1-1@m uk-hidden@l">
-					<a class="uk-button uk-button-default uk-width-1-1@m uk-text-left uk-margin-small-bottom" uk-tooltip="{{$value->titre}}">{{str_limit($value->titre,36,'...')}}</a>
+					<a class="uk-button uk-button-default uk-width-1-1@m uk-text-left uk-margin-small-bottom" uk-tooltip="{{$value->titre}}">{{str_limit($value->titre,16,'...')}}</a>
 				    <div class="uk-inline">
 				        <!-- The button toggling the dropdown -->
 				        <a href="{{asset('documents/'.$value->file)}}" target="_blank" style="background : rgb(0, 116, 180);color:#fff" class="uk-button uk-button-default" type="button"> <span uk-icon="icon:download;ratio:2"></span></a>
