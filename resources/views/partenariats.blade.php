@@ -13,7 +13,17 @@ Nos Partenaires
 		</ul>
 		<div uk-grid>
 			<div class="uk-width-1-5@m uk-visible@l">
-
+				<div class="" id="">
+          <div
+          class="fb-page"
+          data-href="https://www.facebook.com/ANSSI-Guin%C3%A9e-123887145678620/?__tn__=%2Cd%2CP-R&amp;eid=ARCi7SQPj9kFWkmBOxa7643aBMd9cbQsWtwNeC98sI_cMpWXcvBa1IjckVoyH1fcXmydI3Zd7VRTO5Qp" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ANSSI-Guin%C3%A9e-123887145678620/?__tn__=%2Cd%2CP-R&amp;eid=ARCi7SQPj9kFWkmBOxa7643aBMd9cbQsWtwNeC98sI_cMpWXcvBa1IjckVoyH1fcXmydI3Zd7VRTO5Qp"
+          class="fb-xfbml-parse-ignore">
+          <a href="https://www.facebook.com/ANSSI-Guin%C3%A9e-123887145678620/?__tn__=%2Cd%2CP-R&amp;eid=ARCi7SQPj9kFWkmBOxa7643aBMd9cbQsWtwNeC98sI_cMpWXcvBa1IjckVoyH1fcXmydI3Zd7VRTO5Qp">ANSSI Guinée</a></blockquote></div>
+        </div>
+        <hr class="uk-divider-small">
+        <div class="">
+          <a class="twitter-timeline" data-lang="fr" data-theme="light" href="https://twitter.com/AnssiGuinee?ref_src=twsrc%5Etfw">Tweets by AnssiGuinee</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
 			</div>
 			<div class="uk-width-3-5@m">
 				<div class="uk-heading-divider uk-h3">Nos Partenaires</div>
@@ -78,7 +88,7 @@ Nos Partenaires
 	        </div>
 					<div class='uk-border-rounded uk-margin-top panel-right uk-box-shadow-small'>
 						<div class='uk-text-bold uk-text-center panel-right-header uk-border-rounded uk-padding-remove'>Nous Contacter</div>
-						<div class="uk-grid-small uk-padding  uk-child-width-1-3@m" uk-grid>
+						<div class="uk-grid-small uk-padding-small uk-margin-top  uk-child-width-1-4@m" uk-grid>
 							<div class="">
 								<a href="https://www.facebook.com/anssi.guinee.3" target="_blank" class="uk-padding-small uk-border-rounded uk-button-primary"><span uk-icon="icon:facebook ;"></span></a>
 							</div>
@@ -87,6 +97,9 @@ Nos Partenaires
 							</div>
 							<div class="">
 								<a href="https://www.youtube.com/channel/UCmof-FnBWW2m8LAXrydUsJg/featured" target="_blank" class="uk-padding-small uk-border-rounded uk-button-primary" style="background:red"><span uk-icon="icon:youtube ;"></span></a>
+							</div>
+							<div class="">
+								<a href="https://www.linkedin.com/company/anssiguinee/" target="_blank" class="uk-padding-small uk-border-rounded uk-button-primary" style="background:#0073b1"><span uk-icon="icon:linkedin ;"></span></a>
 							</div>
 						</div>
 					</div>

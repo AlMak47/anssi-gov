@@ -50,7 +50,7 @@ Agence Nationale de la Securite des Systemes d'Information
     </ul>
     </div>
   </div>
-  
+
   <!-- // -->
   <div class="uk-padding uk-margin-small-left uk-child-width-1-3@m uk-visible@l" uk-grid>
     <!--  -->
@@ -132,7 +132,16 @@ Agence Nationale de la Securite des Systemes d'Information
           <a class="uk-link-reset" href="{{url('/news',['slug'=>$values->slug])}}">
             <h1 class="uk-article-title">{{str_limit($values->titre,100,'...')}}</h1>
             <?php $date = new Carbon($values->created_at); ?>
-            <p class="uk-article-meta"> <a href="#">Admin</a> , {{$date->toFormattedDateString()}}.</p>
+            <p class="uk-article-meta"> <a href="#">Admin</a> , {{$date->locale('fr_FR')->diffForHumans()}} ,
+              <!-- SHARE WITH FACEBOOK -->
+              <span class="fb-like" data-href="{{url()->current()}}" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></span>
+              <!-- // -->
+              <!-- share with twitter -->
+              <span class="">
+                <a href="https://twitter.com/AnssiGuinee?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-lang="fr" data-show-count="false"></a>
+              </span>
+              <!-- // -->
+            </p>
             <img src="{{asset('article/'.$values->image)}}" class="uk-responsive-width uk-responsive-height" alt="" uk-img>
             <!-- <p class="uk-text-large">{!!str_limit(strip_tags($values->contenu),300,'...')!!}</p> -->
         </a>
@@ -145,8 +154,16 @@ Agence Nationale de la Securite des Systemes d'Information
     <!-- // -->
 		<div class="uk-grid-medium uk-visible@l" uk-grid>
       <div class="uk-width-1-5@m">
-        <div class="" id="left-menu">
-          <!-- facebook plugin                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              -->
+        <div class="" id="">
+          <div
+          class="fb-page"
+          data-href="https://www.facebook.com/ANSSI-Guin%C3%A9e-123887145678620/?__tn__=%2Cd%2CP-R&amp;eid=ARCi7SQPj9kFWkmBOxa7643aBMd9cbQsWtwNeC98sI_cMpWXcvBa1IjckVoyH1fcXmydI3Zd7VRTO5Qp" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ANSSI-Guin%C3%A9e-123887145678620/?__tn__=%2Cd%2CP-R&amp;eid=ARCi7SQPj9kFWkmBOxa7643aBMd9cbQsWtwNeC98sI_cMpWXcvBa1IjckVoyH1fcXmydI3Zd7VRTO5Qp"
+          class="fb-xfbml-parse-ignore">
+          <a href="https://www.facebook.com/ANSSI-Guin%C3%A9e-123887145678620/?__tn__=%2Cd%2CP-R&amp;eid=ARCi7SQPj9kFWkmBOxa7643aBMd9cbQsWtwNeC98sI_cMpWXcvBa1IjckVoyH1fcXmydI3Zd7VRTO5Qp">ANSSI Guinée</a></blockquote></div>
+        </div>
+        <hr class="uk-divider-small">
+        <div class="">
+          <a class="twitter-timeline" data-lang="fr" data-theme="light" href="https://twitter.com/AnssiGuinee?ref_src=twsrc%5Etfw">Tweets by AnssiGuinee</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
 			</div>
 		<!-- BULLETIN D'ACTUALITES -->
@@ -160,7 +177,16 @@ Agence Nationale de la Securite des Systemes d'Information
 
 				    <h1 class="uk-article-title"><a class="uk-link-reset" href="{{url('/news',['slug'=>$values->slug])}}">{{str_limit($values->titre,100,'...')}}</a></h1>
 				    <?php $date = new Carbon($values->created_at); ?>
-				    <p class="uk-article-meta"> <a href="#">Admin</a> , {{$date->toFormattedDateString()}}.</p>
+				    <p class="uk-article-meta"> <a href="#">Admin</a> , {{$date->locale('fr_FR')->diffForHumans()}}.
+              <!-- SHARE WITH FACEBOOK -->
+              <span class="fb-like" data-href="{{url()->current()}}" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></span>
+              <!-- // -->
+              <!-- share with twitter -->
+              <span class="uk-align-right">
+                <a href="https://twitter.com/AnssiGuinee?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-lang="fr" data-size="large" data-show-count="true">Follow @AnssiGuinee</a>
+              </span>
+              <!-- // -->
+            </p>
 
 				    <!-- <p class="uk-text-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p> -->
 
@@ -195,15 +221,18 @@ Agence Nationale de la Securite des Systemes d'Information
 					</div>
 					<div class='uk-border-rounded uk-margin-top panel-right uk-box-shadow-small'>
 						<div class='uk-text-bold uk-text-center panel-right-header uk-border-rounded uk-padding-remove'>Nous Contacter</div>
-						<div class="uk-grid-small uk-padding  uk-child-width-1-3@m" uk-grid>
+						<div class="uk-grid-small uk-padding-small uk-margin-top  uk-child-width-1-4@m" uk-grid>
 							<div class="">
-								<a href="https://www.facebook.com/anssi.guinee.3" target="_blank" class="uk-padding-small uk-border-rounded uk-button-primary"><span uk-icon="icon:facebook ;"></span></a>
+								<a href="https://www.facebook.com/ANSSI-Guin%C3%A9e-123887145678620/" target="_blank" class="uk-padding-small uk-border-rounded uk-button-primary"><span uk-icon="icon:facebook ;"></span></a>
 							</div>
 							<div class="">
 								<a href="https://www.twitter.com/AnssiGuinee" target="_blank" class="uk-padding-small uk-border-rounded uk-button-primary" style="background:skyblue"><span uk-icon="icon:twitter ;"></span></a>
 							</div>
 							<div class="">
 								<a href="https://www.youtube.com/channel/UCmof-FnBWW2m8LAXrydUsJg/featured" target="_blank" class="uk-padding-small uk-border-rounded uk-button-primary" style="background:red"><span uk-icon="icon:youtube ;"></span></a>
+							</div>
+							<div class="">
+								<a href="https://www.linkedin.com/company/anssiguinee/" target="_blank" class="uk-padding-small uk-border-rounded uk-button-primary" style="background:#0073b1"><span uk-icon="icon:linkedin ;"></span></a>
 							</div>
 						</div>
 					</div>

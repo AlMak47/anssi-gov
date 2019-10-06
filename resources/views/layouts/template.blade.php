@@ -116,10 +116,10 @@
 			</ul>
 			<hr class="uk-divider-small">
 			<ul class="uk-navbar-nav">
-				<li class="uk-margin-small-left"><a href="https://www.facebook.com/anssi.guinee.3" class="uk-button uk-border-rounded" style="color:#fff;background : darkblue"><span uk-icon="icon:facebook"></span></a></li>
+				<li class="uk-margin-small-left"><a href="https://www.facebook.com/ANSSI-Guin%C3%A9e-123887145678620/" class="uk-button uk-border-rounded" style="color:#fff;background : darkblue"><span uk-icon="icon:facebook"></span></a></li>
 				<li class="uk-margin-small-left"><a href="https://twitter.com/AnssiGuinee" class="uk-button uk-border-rounded" style="color:#fff;background :skyblue "><span  uk-icon="icon:twitter"></span></a></li>
 				<li class="uk-margin-small-left"><a href="https://www.youtube.com/channel/UCmof-FnBWW2m8LAXrydUsJg/featured" class="uk-button uk-border-rounded" style="color:#fff;background : red"><span  uk-icon="icon:youtube"></span></a></li>
-				<!-- <li class="uk-margin-small-left"><a href="" class="uk-button uk-border-rounded" style="color:#fff;background : grey"><span  uk-icon="icon:instagram"></span></a></li> -->
+				<li class="uk-margin-small-left"><a href="" class="uk-button uk-border-rounded" style="color:#fff;background : grey"><span  uk-icon="icon:linkedin"></span></a></li>
 			</ul>
 			<hr class="uk-divider-small">
 			<p>&copy; ANSSI GUINEE {{date('Y')}}</p>
@@ -137,9 +137,10 @@
     </div>
     <div class="menu-connex">
     	<ul class="">
-    		<li><a href="https://www.facebook.com/anssi.guinee.3" target="_blank" class="uk-button-primary uk-border-rounded"><span uk-icon="icon:facebook"></span></a></li>
+    		<li><a href="https://www.facebook.com/ANSSI-Guin%C3%A9e-123887145678620/" target="_blank" class="uk-button-primary uk-border-rounded"><span uk-icon="icon:facebook"></span></a></li>
     		<li><a href="https://twitter.com/AnssiGuinee" target="_blank" class="uk-button-primary uk-border-rounded" style="background:skyblue"><span  uk-icon="icon:twitter"></span></a></li>
     		<li><a href="https://www.youtube.com/channel/UCmof-FnBWW2m8LAXrydUsJg/featured" target="_blank" class="uk-button-primary uk-border-rounded" style="background: red"><span  uk-icon="icon:youtube"></span></a></li>
+				<li class="uk-margin-small-left"><a href="https://www.linkedin.com/company/anssiguinee/" class="uk-button-default uk-border-rounded" target="_blank" style="color:#fff;background : #0073b1"><span  uk-icon="icon:linkedin"></span></a></li>
 <?php $voir = App\Pages::where('tag','voir_aussi')->orderBy('created_at','asc')->get(); ?>
 	@if($voir)
     @foreach($voir as $key => $value)
@@ -331,6 +332,7 @@ $administration = App\Pages::where('tag','administration')->orderBy('created_at'
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js" integrity="sha256-BuxrUdr/4YoztQLxT6xmdO6hSQw2d6BtBUY1pteGds4=" crossorigin="anonymous"></script>
+		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
 
 <script type="text/javascript">
