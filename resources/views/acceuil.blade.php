@@ -138,7 +138,7 @@ Agence Nationale de la Securite des Systemes d'Information
               <!-- // -->
               <!-- share with twitter -->
               <span class="">
-                <a href="https://twitter.com/AnssiGuinee?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-lang="fr" data-show-count="false"></a>
+                <a href="https://twitter.com/AnssiGuinee?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-size="large" data-lang="fr" data-show-count="false">Follow @AnssiGuinee</a>
               </span>
               <!-- // -->
             </p>
@@ -163,7 +163,7 @@ Agence Nationale de la Securite des Systemes d'Information
         </div>
         <hr class="uk-divider-small">
         <div class="">
-          <a class="twitter-timeline" data-lang="fr" data-theme="light" href="https://twitter.com/AnssiGuinee?ref_src=twsrc%5Etfw">Tweets by AnssiGuinee</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <a class="twitter-timeline" data-lang="fr" data-theme="light" href="https://twitter.com/AnssiGuinee?ref_src=twsrc%5Etfw">Tweets by AnssiGuinee</a>
         </div>
 			</div>
 		<!-- BULLETIN D'ACTUALITES -->
